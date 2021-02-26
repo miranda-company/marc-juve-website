@@ -1,14 +1,29 @@
-// Color palette
-$seaweed: #6C7B82;
-$dark-seaweed: #2B383E;
+// Colors
+/*
+    1. Primary color
+    2. Secondary color
+    3. Light and dark variants
+    4. Additional ( such as colors for backgrounds, surfaces, errors, typography, and iconography )
+*/
 
-$canary: #F1B545;
-$dark-canary: #D9A85F;
+// 1. Primary color
+$primary-color: #caa130;
 
-$terracota: #C83634;
-$dark-terracota: #8A2F20;
+// 2. Secondary color
+$secondary-color: #4f6849;
 
-$grey: #BCBCBC;
-$veige: #F6EBE4;
+// 3. Light and dark variants
+$primary-color-light: #ffbb00;
+$primary-color-dark: #be8c00;
 
-$white: #ffffff;
+$secondary-color-light: #7ba171;
+$secondary-color-dark: #212b1e;
+
+// 4. Additional
+$texts-color: #2d2d2d;
+$headings-color: #2d2d2d;
+$background-color: #2d2d2d;
+$surface-color: #d2d2d2;
+$error-color: #d32e2e;
+
+

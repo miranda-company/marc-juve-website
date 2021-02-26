@@ -1,5 +1,6 @@
-# starter-environment
-A development environment that includes Node.js, NPM, Gulp, Bootstrap, SASS, JQuery and GSAP..
+# Marc Juve - website
+
+This template was developed by Rodolfo Miranda Company ( [la bau—la](https://www.labaula.net/) ) for [Marc Juvé](http://www.marcjuve.com/). 
 
 ## Checking out the repo
 Open VSCode and clone this GitHub repo: Inside VSCode select Git: Clone command in the Command Palette (Ctrl+Shift+P). And paste repo url. For more info checkout "Cloning a repository" https://code.visualstudio.com/docs/editor/versioncontrol

@@ -64,7 +64,16 @@ function transpileCSS() {
         .pipe(browserSync.stream());
 }
 
-function addJSlibs() {
+// Add CSS modules into directories
+function addCSSmodules() {
+    return src([
+        "node_modules/destyle.css/destyle.css"])
+        .pipe(dest(path.srcCSSdir))
+        .pipe(browserSync.stream());
+}
+
+// Add JS modules into directories
+function addJSmodules() {
     return src([
         "node_modules/gsap/dist/gsap.min.js",
         "node_modules/jquery/dist/jquery.min.js"])
@@ -123,5 +132,5 @@ function moveFONTS() {
         .pipe(dest(path.distFONTSdir));
 }
 
-exports.default = series(parallel(transpileCSS, addJSlibs, nunjucks), serve);
+exports.default = series(parallel(transpileCSS, addCSSmodules, addJSmodules, nunjucks), serve);
 exports.dist = parallel(moveHTML, moveCSS, moveJS, moveIMGS, moveFONTS);

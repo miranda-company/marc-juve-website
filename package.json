@@ -1,7 +1,7 @@
 {
-  "name": "marc-juve-website",
+  "name": "marg-juve-website",
   "version": "1.0.0",
-  "description": "Website built for film director Marc Juve",
+  "description": "A website for film director Marc Juve",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -30,6 +30,7 @@
     "gulp-useref": "^4.0.1"
   },
   "dependencies": {
+    "destyle.css": "^2.0.2",
     "gsap": "^3.6.0",
     "jquery": "^3.5.1"
   },
