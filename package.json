@@ -1,0 +1,39 @@
+{
+  "name": "marc-juve-website",
+  "version": "1.0.0",
+  "description": "Website built for film director Marc Juve",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miranda-company/marc-juve-website.git"
+  },
+  "author": "Rodolfo Miranda Company",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miranda-company/marc-juve-website/issues"
+  },
+  "homepage": "https://github.com/miranda-company/marc-juve-website#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "browserlist": "^1.0.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-beautify": "^3.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-useref": "^4.0.1"
+  },
+  "dependencies": {
+    "gsap": "^3.6.0",
+    "jquery": "^3.5.1"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
