@@ -1,11 +1,10 @@
 // Texts and links
 /*
 */
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;600;900&display=swap');
 
-$heading-font: "Libre Baskerville", serif;
-$paragraph-font: "Roboto", sans-serif;
+$heading-font: "Nunito Sans", sans-serif;
+$paragraph-font: "Nunito Sans", sans-serif;
 
 html { font-size: $base-unit; }
 
@@ -15,9 +14,9 @@ body {
     font-family: $paragraph-font;
     font-size: 2rem;
     line-height: 3.25rem;
-    font-weight: 400;
     text-rendering: optimizeLegibility;
     color: $texts-color;
+    font-weight: 200;
 }
 
 h1,
@@ -28,6 +27,7 @@ h5,
 h6 {
   font-family: $heading-font;
   color: $headings-color;
+  font-weight: 900;
 }
 
 h1 {

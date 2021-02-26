@@ -6,4 +6,9 @@
 */
 
 $base-unit: 8px;
-$max-page-width: 1360px;
+$page-max-width: 1360px;
+
+// Break points
+$break-1: 1024px; /* 1024px */ 
+$break-2: 720px; /* 1024px */ 
+$break-3: 480px; /* 1024px */

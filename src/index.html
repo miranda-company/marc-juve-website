@@ -2,49 +2,73 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
-    <title>Dev. Environment</title>
-    <meta name="description" content="Here the description of the project." />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
-    <meta name="theme-color" content="#fafafa" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
+  <title>Marc Juvé - Film director</title>
+  <meta name="description" content="Here the description of the project." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
+  <meta name="theme-color" content="#fafafa" />
 
-    <meta property="og:title" content="" />
-    <meta property="og:type" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
+  <meta property="og:title" content="" />
+  <meta property="og:type" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
 
-    <link rel="manifest" href="site.webmanifest" />
-    <link rel="apple-touch-icon" href="icon.png" />
-    <!-- Place favicon.ico in the root directory -->
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <!-- Place favicon.ico in the root directory -->
 
-    <!-- CSS files -->
-    <link rel="stylesheet" href="/css/destyle.css" />
-    <link rel="stylesheet" href="/css/main.css" />
+  <!-- CSS files -->
+  <link rel="stylesheet" href="/css/destyle.css" />
+  <link rel="stylesheet" href="/css/main.css" />
 </head>
 
 <body>
-    <!-- App structure -->
-    <header>
-        <nav></nav>
-    </header>
+  <!-- App structure -->
+  <main class="main-wrap">
 
-    <div id="main-container">
-        <p id="myanim">
-            Hello stranger!
-            <br>
-            If you see me blinking, I'm alive.
-        </p>
+    <!-- Main content -->
+    <nav class="menu">
 
-    </div>
+      <div class="wrap">
+        <div class="container">
+          <a href="#"><button>Home</button></a>
+          <a href="#"><button>Featured work</button></a>
+          <a href="#"><button>About</button></a>
+          <a href="#"><button>Contact</button></a>
+          <a href="#"><button>Archive</button></a>
+        </div>
+      </div>
 
-    <footer></footer>
-    <!-- App structure ends -->
+    </nav>
+    <section class="hero-video">
+      <video autoplay="" preload="" loop="" muted="" playsinline="" poster="https://kimgehrig.com/wp-content/uploads/2019/03/Kim-Loop-1280x720.png">
+        <source src="https://player.vimeo.com/external/397423062.hd.mp4?s=f2229d53ff2f02f0b92b7222397bea984dc2b94a&amp;profile_id=175" type="video/mp4" codecs="avc1.42E01E,mp4a.40.2">
 
-    <!-- JS files -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/gsap.min.js"></script>
-    <script src="/js/main.js"></script>
+        <img src="https://kimgehrig.com/wp-content/uploads/2019/03/Kim-Loop-1280x720.png">
+      </video>
+
+    </section>
+    <section class="featured-works">
+    </section>
+    <section class="about">
+    </section>
+    <section class="contact">
+    </section>
+    <section class="archive">
+    </section><!-- Main content ends -->
+
+  </main>
+
+  <!-- App structure ends -->
+
+  <!-- JS files -->
+  <script>
+    let currentPage = "Home";
+  </script>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/gsap.min.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 
 </html>

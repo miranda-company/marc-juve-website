@@ -1,0 +1,13 @@
+<!-- index.html -->
+{% set page = "Home" %}
+{% extends "page-template.html" %}
+
+{%- block mainContent -%}
+    {# Page content goes here #}
+    {% include "partials/menu.html" %}
+    {% include "partials/hero-video.html" %}
+    {% include "partials/featured-works.html" %}
+    {% include "partials/about.html" %}
+    {% include "partials/contact.html" %}
+    {% include "partials/archive.html" %}
+{%- endblock -%}

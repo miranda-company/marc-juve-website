@@ -1,0 +1,24 @@
+{%- include "partials/head.html" -%}
+
+<body>
+    <!-- App structure -->
+    <main class="main-wrap">
+
+        <!-- Main content -->
+        {%- block mainContent -%}{%- endblock -%}
+        <!-- Main content ends -->
+
+    </main>
+
+    <!-- App structure ends -->
+
+    <!-- JS files -->
+    <script>
+        let currentPage = "{{ page }}";
+    </script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/gsap.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+.hero-video {
+    border: $wire;
+    overflow: hidden;
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+}

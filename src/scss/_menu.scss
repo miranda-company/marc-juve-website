@@ -1,0 +1,49 @@
+// Menu
+/*
+*/
+.menu {
+    position: fixed;
+    background-color: $primary-color;
+    width: 100%;
+    height: 5rem;
+    z-index: 100;
+
+    .wrap { height: 100%; }
+        .container {
+            border: $wire;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-evenly;
+            width: 50%;
+            transition: width 1s;
+            height: 100%;
+            background-color: chartreuse;
+            transition: width 1s, opacity 0.5s;
+        }
+            button {
+                border: $wire;
+                font-weight: 600;
+                padding: 0 1rem;
+                height: 100%;
+            }
+}
+
+@media only screen and (max-width: $break-1) {
+    .menu {
+        .container { width: 80%; }
+    }
+}
+
+@media only screen and (max-width: $break-2) {
+    .menu {
+        .container { width: 100%; }
+    }
+}
+
+@media only screen and (max-width: $break-3) {
+    .menu {
+        .container {
+            opacity: 0;
+        }
+    }
+}
