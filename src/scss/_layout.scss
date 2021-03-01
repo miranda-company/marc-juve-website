@@ -13,13 +13,13 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   scroll-behavior: smooth;
   background-color: $background-color;
 }
 
 .wrap {
   border: $wire;
+  position: relative;
   max-width: $page-max-width;
   margin: 0 auto;
 }

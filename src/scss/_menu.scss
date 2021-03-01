@@ -2,11 +2,12 @@
 /*
 */
 .menu {
+    border: $wire;
     position: fixed;
-    background-color: $primary-color;
     width: 100%;
     height: 5rem;
-    z-index: 100;
+    z-index: 1;
+    background-color: red;
 
     .wrap { height: 100%; }
         .container {

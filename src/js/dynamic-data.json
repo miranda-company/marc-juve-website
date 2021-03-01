@@ -1,0 +1,15 @@
+{
+    "name": "JSON File test",
+    "projects": [
+        {
+            "title": "Project one",
+            "subtitle": "Subtitle",
+            "description": "This is the project description",
+            "category": "commercials",
+            "videoUrl": "https://www.youtube.com/watch?v=4KTJlHHuCfU",
+            "posterUrl": "https://www.giphy.com/alien.jpg",
+            "featured": true,
+            "visible": true
+        }
+    ]
+}
