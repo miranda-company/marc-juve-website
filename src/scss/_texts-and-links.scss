@@ -19,6 +19,12 @@ body {
     font-weight: 200;
 }
 
+p {
+  font-size: 4rem;
+  line-height: 6rem;
+  word-break: break-word;
+}
+
 h1,
 h2,
 h3,
@@ -40,4 +46,22 @@ h2 {
 
 h3 {
   font-size: 2rem;
+}
+
+
+@media only screen and (max-width: $break-1) {
+  p {
+    font-size: 3rem;
+    line-height: 5rem;
+  }
+}
+
+@media only screen and (max-width: $break-2) {
+  p {
+    font-size: 2.5rem;
+    line-height: 4.5rem;
+  }
+}
+
+@media only screen and (max-width: $break-3) {
 }

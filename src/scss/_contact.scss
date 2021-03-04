@@ -1,0 +1,51 @@
+// Contact
+/*
+*/
+.contact {
+    border: $wire;
+
+    .wrap {}
+
+        h1 {
+            text-align: center;
+            margin-bottom: 5rem ;
+        }
+
+        .contact-text {
+            text-align: center;
+            margin-bottom: 5rem ;
+        }
+
+        .container {
+            border: $wire;
+            margin: 0 auto 5rem ;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 40rem;
+            transition: width 1s;
+            height: 5rem;
+            transition: width 1s, opacity 0.5s;
+        }
+            .container a button {
+                border: $wire;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+}
+
+
+@media only screen and (max-width: $break-1) {
+   
+}
+
+@media only screen and (max-width: $break-2) {
+   .contact {
+       .container { width: 100%; }
+   }
+}
+
+@media only screen and (max-width: $break-3) {
+    
+}

@@ -1,7 +1,7 @@
 // Layout
 /*
 */
-$wire: 1px solid cyan;
+$wire: 0px solid cyan;
 
 * {
     box-sizing: border-box;
@@ -22,4 +22,24 @@ body {
   position: relative;
   max-width: $page-max-width;
   margin: 0 auto;
+  padding: 0 10rem;
+}
+
+.margin-bottom {
+  margin-bottom: 20rem;
+}
+
+@media only screen and (max-width: $break-1) {
+  .wrap { padding: 0 7rem; }
+  .margin-bottom { margin-bottom: 15rem; }
+}
+
+@media only screen and (max-width: $break-2) {
+  .wrap { padding: 0 4rem; }
+  .margin-bottom { margin-bottom: 10rem; }
+}
+
+@media only screen and (max-width: $break-3) {
+  .wrap { padding: 0 2rem; }
+  .margin-bottom { margin-bottom: 5rem; }
 }

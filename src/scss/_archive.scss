@@ -1,7 +1,7 @@
-// Featured work
+// Archive
 /*
 */
-.featured-work {
+.archive {
     border: $wire;
 
     .wrap {}
@@ -34,7 +34,7 @@
     }
         .card {
             border: $wire;
-            width: 50%;
+            width: 33.33%;
             height: auto;
             padding: 0.5rem;
             cursor: pointer;
@@ -73,20 +73,20 @@
 
 
 @media only screen and (max-width: $break-1) {
-    .featured-work {
+    .archive {
         .container { width: 80%; }
     }
 }
 
 @media only screen and (max-width: $break-2) {
-    .featured-work {
+    .archive {
         .container { width: 100%; }
         
     }
 }
 
 @media only screen and (max-width: $break-3) {
-    .featured-work {
+    .archive {
         .container {
             display: none;
         }
