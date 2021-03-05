@@ -19,5 +19,12 @@
 @import "_contact.scss";
 @import "_archive.scss";
 
+// The layout styles for the project view are located inside _layout.scss
+@import "_project-close-btn.scss";
+@import "_project-header.scss";
 @import "_project-description.scss";
 @import "_project-related.scss";
+@import "_project-festivals.scss";
+@import "_project-poster.scss";
+@import "_project-download-cta.scss";
+@import "_project-end.scss";

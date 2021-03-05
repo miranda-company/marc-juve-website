@@ -21,22 +21,22 @@
 /*
 */
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;600;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
 html {
   font-size: 8px; }
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
   line-height: 3.25rem;
   text-rendering: optimizeLegibility;
-  color: #2d2d2d;
-  font-weight: 200; }
+  color: #2d2d2d; }
 
-p {
+p, ul {
   font-size: 4rem;
-  line-height: 6rem;
+  line-height: 7rem;
   word-break: break-word; }
 
 h1,
@@ -46,27 +46,39 @@ h4,
 h5,
 h6 {
   font-family: "Nunito Sans", sans-serif;
-  color: #2d2d2d;
-  font-weight: 900; }
+  color: #2d2d2d; }
 
 h1 {
-  font-size: 4rem; }
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 5rem; }
 
 h2 {
-  font-size: 3rem; }
+  font-size: 3rem;
+  font-weight: 900; }
 
 h3 {
-  font-size: 2rem; }
+  font-size: 2rem;
+  font-weight: 600; }
+
+a {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  text-decoration: underline; }
+
+a:hover {
+  color: #6a757e; }
 
 @media only screen and (max-width: 1024px) {
-  p {
+  p, ul {
     font-size: 3rem;
-    line-height: 5rem; } }
+    line-height: 4rem; } }
 
 @media only screen and (max-width: 720px) {
-  p {
+  p, ul {
     font-size: 2.5rem;
-    line-height: 4.5rem; } }
+    line-height: 3.5rem; } }
 
 /*
 */
@@ -84,7 +96,7 @@ body {
   background-color: #f5f5f5f5; }
 
 .wrap {
-  border: 1px solid cyan;
+  border: 0px solid cyan;
   position: relative;
   max-width: 1360px;
   margin: 0 auto;
@@ -96,42 +108,50 @@ body {
   position: fixed; }
 
 .project-wrap {
-  border: 1px solid cyan;
+  border: 0px solid cyan;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 3500px;
+  height: auto;
   background-color: white;
-  z-index: 2;
-  overflow-y: scroll !important; }
+  z-index: 2; }
 
 .margin-bottom {
-  margin-bottom: 20rem; }
+  margin-bottom: 15rem; }
+
+.gutter {
+  margin-bottom: 10rem; }
 
 @media only screen and (max-width: 1024px) {
   .wrap {
     padding: 0 7rem; }
   .margin-bottom {
-    margin-bottom: 15rem; } }
+    margin-bottom: 12rem; }
+  .gutter {
+    margin-bottom: 8rem; } }
 
 @media only screen and (max-width: 720px) {
   .wrap {
     padding: 0 4rem; }
   .margin-bottom {
-    margin-bottom: 10rem; } }
+    margin-bottom: 9rem; }
+  .gutter {
+    margin-bottom: 6rem; } }
 
 @media only screen and (max-width: 480px) {
   .wrap {
     padding: 0 2rem; }
   .margin-bottom {
-    margin-bottom: 5rem; } }
+    margin-bottom: 6rem; }
+  .gutter {
+    margin-bottom: 4rem; } }
 
 /*-- 2  --*/
 /*
 */
 .menu {
-  border: 1px solid cyan;
+  border: 0px solid cyan;
   position: fixed;
   width: 100%;
   height: 5rem;
@@ -140,7 +160,7 @@ body {
   .menu .wrap {
     height: 100%; }
   .menu .container {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     margin: 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -156,7 +176,7 @@ body {
     -webkit-transition: width 1s, opacity 0.5s;
     transition: width 1s, opacity 0.5s; }
   .menu button {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     font-weight: 600;
     padding: 0 1rem;
     height: 100%; }
@@ -176,7 +196,7 @@ body {
 /*
 */
 .hero-video {
-  border: 1px solid cyan;
+  border: 0px solid cyan;
   overflow: hidden; }
   .hero-video video {
     width: 100%;
@@ -185,12 +205,12 @@ body {
 /*
 */
 .featured-work {
-  border: 1px solid cyan; }
+  border: 0px solid cyan; }
   .featured-work h1 {
     text-align: center;
     margin-bottom: 5rem; }
   .featured-work .container {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     margin: 0 auto 5rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -205,19 +225,19 @@ body {
     -webkit-transition: width 1s, opacity 0.5s;
     transition: width 1s, opacity 0.5s; }
   .featured-work button {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     font-weight: 600;
     padding: 0 1rem;
     height: 100%; }
   .featured-work .grid {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
   .featured-work .card {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 50%;
     height: auto;
     padding: 0.5rem;
@@ -228,7 +248,7 @@ body {
   .featured-work .title, .featured-work .overlay {
     position: absolute; }
   .featured-work .title {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 94%;
     top: 50%;
     left: 3%;
@@ -244,7 +264,7 @@ body {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.8); }
   .featured-work .thumb {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 100%;
     height: auto; }
   .featured-work .thumb img {
@@ -272,7 +292,7 @@ body {
 /*
 */
 .about {
-  border: 1px solid cyan; }
+  border: 0px solid cyan; }
   .about h1 {
     text-align: center;
     margin-bottom: 5rem; }
@@ -282,7 +302,7 @@ body {
 /*
 */
 .contact {
-  border: 1px solid cyan; }
+  border: 0px solid cyan; }
   .contact h1 {
     text-align: center;
     margin-bottom: 5rem; }
@@ -290,7 +310,7 @@ body {
     text-align: center;
     margin-bottom: 5rem; }
   .contact .container {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     margin: 0 auto 5rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -308,7 +328,7 @@ body {
     -webkit-transition: width 1s, opacity 0.5s;
     transition: width 1s, opacity 0.5s; }
   .contact .container a button {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -326,12 +346,12 @@ body {
 /*
 */
 .archive {
-  border: 1px solid cyan; }
+  border: 0px solid cyan; }
   .archive h1 {
     text-align: center;
     margin-bottom: 5rem; }
   .archive .container {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     margin: 0 auto 5rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -346,19 +366,19 @@ body {
     -webkit-transition: width 1s, opacity 0.5s;
     transition: width 1s, opacity 0.5s; }
   .archive button {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     font-weight: 600;
     padding: 0 1rem;
     height: 100%; }
   .archive .grid {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
   .archive .card {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 33.33%;
     height: auto;
     padding: 0.5rem;
@@ -369,7 +389,7 @@ body {
   .archive .title, .archive .overlay {
     position: absolute; }
   .archive .title {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 94%;
     top: 50%;
     left: 3%;
@@ -385,7 +405,7 @@ body {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.8); }
   .archive .thumb {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 100%;
     height: auto; }
   .archive .thumb img {
@@ -412,27 +432,57 @@ body {
 
 /*
 */
-.project-description {
-  border: 1px solid cyan; }
-  .project-description h1, .project-description h2 {
+.close-btn {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 5rem;
+  right: 5rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 3; }
+
+.close-btn:hover {
+  background-color: white; }
+
+/*
+*/
+.project-header {
+  border: 0px solid cyan; }
+  .project-header h1, .project-header h2, .project-header h3 {
     text-align: center;
     margin-bottom: 2.5rem; }
+  .project-header h2 {
+    font-weight: 200; }
+
+/*
+*/
+.project-description {
+  border: 0px solid cyan; }
   .project-description .about-text {
     text-align: center; }
 
 /*
 */
 .project-related {
-  border: 1px solid cyan; }
+  border: 0px solid cyan; }
   .project-related .grid {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
   .project-related .card {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 50%;
     height: auto;
     padding: 0.5rem;
@@ -443,7 +493,7 @@ body {
   .project-related .title, .project-related .overlay {
     position: absolute; }
   .project-related .title {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 94%;
     top: 50%;
     left: 3%;
@@ -459,7 +509,7 @@ body {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.8); }
   .project-related .thumb {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 100%;
     height: auto; }
   .project-related .thumb img {
@@ -483,3 +533,61 @@ body {
             flex-direction: column; }
   .project-related .card {
     width: 100%; } }
+
+/*
+*/
+.project-festivals {
+  border: 0px solid cyan; }
+  .project-festivals h1 {
+    margin-bottom: 4rem; }
+  .project-festivals h1, .project-festivals ul {
+    text-align: center; }
+
+/*
+*/
+.project-poster {
+  border: 0px solid cyan; }
+  .project-poster .wrap {
+    position: relative; }
+  .project-poster .poster {
+    border: 0px solid cyan;
+    margin: 0 auto;
+    max-width: 50%; }
+  .project-poster .poster img {
+    width: 100%; }
+
+@media only screen and (max-width: 720px) {
+  .project-poster .poster {
+    max-width: 80%; } }
+
+/*
+*/
+.project-download-cta {
+  border: 0px solid cyan; }
+  .project-download-cta .wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .project-download-cta a {
+    margin: 0 auto; }
+
+@media only screen and (max-width: 720px) {
+  .project-poster .poster {
+    max-width: 80%; } }
+
+/*
+*/
+.project-end {
+  border: 0px solid cyan;
+  margin-top: 50rem;
+  margin-bottom: 50rem; }
+  .project-end .wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .project-end .end-indicators {
+    border: 0px solid cyan;
+    width: 12px;
+    margin: 0 auto; }
+  .project-end .end-indicators svg {
+    margin-bottom: 5rem; }

@@ -1,0 +1,34 @@
+// Project poster
+/*
+*/
+.project-poster {
+    border: $wire;
+
+    .wrap {
+        position: relative;
+    }
+
+    .poster { 
+        border: $wire;
+        margin: 0 auto;
+        max-width: 50%;
+    }
+        .poster img { width: 100%; }
+
+}
+
+
+@media only screen and (max-width: $break-1) {
+}
+
+@media only screen and (max-width: $break-2) {
+    .project-poster {
+        .poster {
+            max-width: 80%;
+        }
+    }
+}
+
+@media only screen and (max-width: $break-3) {
+    
+}

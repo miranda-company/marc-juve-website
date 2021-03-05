@@ -1,0 +1,34 @@
+// Project end
+/*
+*/
+.project-end {
+    border: $wire;
+    margin-top: 50rem;
+    margin-bottom: 50rem;
+    .wrap {
+        display: flex;
+    }
+
+    .end-indicators {
+        border: $wire;
+        width: 12px;
+        margin: 0 auto;
+    }
+        .end-indicators svg {
+            margin-bottom: 5rem;
+        }
+
+}
+
+
+@media only screen and (max-width: $break-1) {
+   
+}
+
+@media only screen and (max-width: $break-2) {
+   
+}
+
+@media only screen and (max-width: $break-3) {
+    
+}

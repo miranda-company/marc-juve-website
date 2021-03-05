@@ -1,13 +1,17 @@
-// Project description
+// Project festivals
 /*
 */
-.project-description {
+.project-festivals {
     border: $wire;
 
     .wrap {}
-        .about-text {
-            text-align: center;
-        }
+
+    h1 {
+        margin-bottom: 4rem;
+    }
+    
+    h1, ul { text-align: center; }
+
 }
 
 

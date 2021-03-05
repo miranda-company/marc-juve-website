@@ -1,13 +1,18 @@
-// Project description
+// Project header
 /*
 */
-.project-description {
+.project-header {
     border: $wire;
 
     .wrap {}
-        .about-text {
+
+        h1, h2, h3 {
             text-align: center;
+            margin-bottom: 2.5rem ;
         }
+
+        // Exception to h2's font weight
+        h2 { font-weight: 200; }
 }
 
 

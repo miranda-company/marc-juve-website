@@ -1,22 +1,25 @@
-// Project description
+// Project poster
 /*
 */
-.project-description {
+.project-download-cta {
     border: $wire;
 
-    .wrap {}
-        .about-text {
-            text-align: center;
-        }
+    .wrap { display: flex; }
+
+    a { margin: 0 auto; }
+
 }
 
 
 @media only screen and (max-width: $break-1) {
-   
 }
 
 @media only screen and (max-width: $break-2) {
-   
+    .project-poster {
+        .poster {
+            max-width: 80%;
+        }
+    }
 }
 
 @media only screen and (max-width: $break-3) {
