@@ -6,7 +6,7 @@ var App = {
     init: function () {
         this.cons("App initialized, console is active");
         this.getDynamicData();
-        Home.init();
+
     },
 
     cons: function (msg) {
@@ -23,7 +23,7 @@ var App = {
         request.onload = function () {
             App.cons("JSON load complete");
             App.dynamicData = request.response;
-            // populateFeaturedWork(App.dynamicData);
+            Home.init();
         }
     }
 }
@@ -47,21 +47,76 @@ var Home = {
 
     featuredWork: {
         mainContainer: $("#js-featured-work"),
-        cards: $(".js-fw-card").toArray(),
+        grid: $("#featured-work-grid"),
+        cardsDynamicData: [],
 
         init: function () {
-            App.cons("FW initialized: " + Home.featuredWork.cards.length + " cards are being displayed:");
-
-            //Add click handler to all cards
-            $.each(Home.featuredWork.cards, function (i) {
-                App.cons(Home.featuredWork.cards[i].id);
-                $(this).on("click", Home.featuredWork.cardHandler);
-            });
-
+            this.populate.search();
         },
 
-        populate: function () {
+        addCardListeners: function () {
+            App.cons("Adding event listeners to FW cards" + Home.featuredWork.cardsDynamicData.length);
+            $.each($(".js-fw-card"), function (i) {
+                $(this).on("click", Home.featuredWork.cardHandler);
+            });
+        },
 
+        populate: {
+            search: function () {
+                App.cons("Searching for featured projects");
+                let dynamicData = App.dynamicData["projects"];
+                let results = [];
+                let searchField = "featured";
+                let searchVal = true;
+
+                for (let i = 0; i < dynamicData.length; i++) {
+                    if (dynamicData[i][searchField] == searchVal) {
+                        results.push(dynamicData[i]);
+                    }
+                }
+
+                Home.featuredWork.cardsDynamicData = results;
+                App.cons("Found " + Home.featuredWork.cardsDynamicData.length + " projects to be featured");
+                this.build();
+            },
+
+            build: function () {
+                App.cons("Building featured work grid");
+                for (let i = 0; i < Home.featuredWork.cardsDynamicData.length; i++) {
+                    let card = document.createElement("div");
+                    card.setAttribute("id", Home.featuredWork.cardsDynamicData[i].id);
+                    card.className = "card js-fw-card";
+                    Home.featuredWork.grid.append(card);
+
+                    let cardContent = document.createElement("div");
+                    cardContent.className = "card-content";
+                    card.append(cardContent);
+
+                    let thumb = document.createElement("div");
+                    thumb.className = "thumb";
+                    cardContent.append(thumb);
+
+                    let thumbImg = document.createElement("img");
+                    thumbImg.className = "thumb-image";
+                    thumbImg.setAttribute("src", Home.featuredWork.cardsDynamicData[i].thumbUrl);
+                    thumb.append(thumbImg);
+
+                    let cardOverlay = document.createElement("div");
+                    cardOverlay.className = "card-overlay";
+                    cardContent.append(cardOverlay);
+
+                    let cardTitle = document.createElement("h2");
+                    cardTitle.className = "card-title";
+                    cardTitle.innerHTML = Home.featuredWork.cardsDynamicData[i].title;
+                    cardContent.append(cardTitle);
+
+                    let cardSubtitle = document.createElement("h3");
+                    cardSubtitle.className = "card-subtitle";
+                    cardSubtitle.innerHTML = Home.featuredWork.cardsDynamicData[i].subtitle;
+                    cardContent.append(cardSubtitle);
+                }
+                Home.featuredWork.addCardListeners();
+            }
         },
 
         cardHandler: function (event) {
@@ -83,9 +138,11 @@ var Project = {
     isOpen: false,
     mainContainer: $(".project-wrap"),
     video: $(".project-video"),
+    videoWrapper: $(".video-wrapper"),
     title: $(".project-title"),
     subtitle: $(".project-subtitle"),
     category: $(".project-category"),
+    description: $(".about-text"),
     closeBtn: $(".close-btn"),
 
     init: function (projectID) {
@@ -97,11 +154,11 @@ var Project = {
         search: function () {
             let dynamicData = App.dynamicData['projects'];
             App.cons("Searching for '" + Project.id + "' inside dynamic data");
-            var results = [];
-            var searchField = "id";
-            var searchVal = Project.id;
+            let results = [];
+            let searchField = "id";
+            let searchVal = Project.id;
 
-            for (var i = 0; i < dynamicData.length; i++) {
+            for (let i = 0; i < dynamicData.length; i++) {
                 if (dynamicData[i][searchField] == searchVal) {
                     results.push(dynamicData[i]);
                     Project.data = dynamicData[i];
@@ -120,7 +177,7 @@ var Project = {
             var videoSrc = Project.data.videoUrl;
             var vimeoOptions = "?autoplay=1&color=bb0207&title=0&byline=0&portrait=0";
             Project.video.attr("src", videoSrc + vimeoOptions);
-            $(".video-wrapper").addClass(Project.data.aspectRatio);
+            Project.videoWrapper.addClass(Project.data.aspectRatio);
 
             Project.open();
         },
@@ -143,7 +200,7 @@ var Project = {
         App.cons("Closing project");
         Project.mainContainer.addClass("display-none");
         Home.unfreeze();
-        $(".video-wrapper").removeClass(Project.data.aspectRatio);
+        Project.videoWrapper.removeClass(Project.data.aspectRatio);
         Project.isOpen = false;
         Project.data = null;
         Project.video.attr("src", "");

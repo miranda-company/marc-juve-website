@@ -21,6 +21,11 @@
   <!-- CSS files -->
   <link rel="stylesheet" href="/css/destyle.css" />
   <link rel="stylesheet" href="/css/main.css" />
+
+  <!-- JS calls -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/gsap.min.js"></script>
 </head>
 
 <body>
@@ -67,67 +72,17 @@
 
       </div>
 
-      <div class="grid">
+      <div id="featured-work-grid" class="grid">
 
-        <div id="l-amor-descongela" class="card js-fw-card">
-          <div class="card-content">
-            <div class="thumb">
-              <img src="img/thumb-1.png" alt="Thumb description">
+        <!-- <div id="project-card" class="card js-fw-card">
+            <div class="card-content">
+                <div class="thumb">
+                    <img class="thumb-image" src="img/thumb-6.png" alt="Thumb description">
+                </div>
+                <div class="card-overlay"></div>
+                <h2 class="title">Project Title</h2>
             </div>
-            <div class="card-overlay"></div>
-            <h2 class="title">Project Title</h2>
-          </div>
-        </div>
-
-        <div id="esta-nevant-a-la-casa-batllo" class="card js-fw-card">
-          <div class="card-content">
-            <div class="thumb">
-              <img src="img/thumb-2.png" alt="Thumb description">
-            </div>
-            <div class="card-overlay"></div>
-            <h2 class="title">Project Title</h2>
-          </div>
-        </div>
-
-        <div id="si-fuera-por-mi" class="card js-fw-card">
-          <div class="card-content">
-            <div class="thumb">
-              <img src="img/thumb-3.png" alt="Thumb description">
-            </div>
-            <div class="card-overlay"></div>
-            <h2 class="title">Project Title</h2>
-          </div>
-        </div>
-
-        <div id="project-4" class="card js-fw-card">
-          <div class="card-content">
-            <div class="thumb">
-              <img src="img/thumb-4.png" alt="Thumb description">
-            </div>
-            <div class="card-overlay"></div>
-            <h2 class="title">Project Title</h2>
-          </div>
-        </div>
-
-        <div id="project-5" class="card js-fw-card">
-          <div class="card-content">
-            <div class="thumb">
-              <img src="img/thumb-5.png" alt="Thumb description">
-            </div>
-            <div class="card-overlay"></div>
-            <h2 class="title">Project Title</h2>
-          </div>
-        </div>
-
-        <div id="project-6" class="card js-fw-card">
-          <div class="card-content">
-            <div class="thumb">
-              <img src="img/thumb-6.png" alt="Thumb description">
-            </div>
-            <div class="card-overlay"></div>
-            <h2 class="title">Project Title</h2>
-          </div>
-        </div>
+        </div> -->
 
       </div>
 
@@ -296,7 +251,6 @@
         <iframe class="project-video" src="" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
         </iframe>
       </div>
-      <script src="https://player.vimeo.com/api/player.js"></script>
 
     </section>
     <section class="project-header gutter">
@@ -416,8 +370,6 @@
   <script>
     let currentPage = "Home";
   </script>
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/gsap.min.js"></script>
   <script src="/js/main.js"></script>
 </body>
 

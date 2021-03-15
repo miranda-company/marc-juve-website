@@ -35,8 +35,8 @@ body {
   color: #2d2d2d; }
 
 p, ul {
-  font-size: 4rem;
-  line-height: 7rem;
+  font-size: 3.2rem;
+  line-height: 4.6rem;
   word-break: break-word; }
 
 h1,
@@ -49,7 +49,7 @@ h6 {
   color: #2d2d2d; }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3.2rem;
   font-weight: 900;
   line-height: 5rem; }
 
@@ -72,6 +72,12 @@ a:hover {
 
 button {
   font-size: 2.5rem; }
+
+::-moz-selection {
+  background: #e1e1e1; }
+
+::selection {
+  background: #e1e1e1; }
 
 @media only screen and (max-width: 1024px) {
   p, ul {
@@ -256,9 +262,9 @@ body {
   .featured-work .card-content {
     position: relative;
     overflow: hidden; }
-  .featured-work .title, .featured-work .card-overlay {
+  .featured-work .card-title, .featured-work .card-subtitle, .featured-work .card-overlay {
     position: absolute; }
-  .featured-work .title {
+  .featured-work .card-title {
     border: 0px solid cyan;
     width: 94%;
     top: 50%;
@@ -268,12 +274,23 @@ body {
     color: #2d2d2d;
     pointer-events: none;
     text-align: center; }
+  .featured-work .card-subtitle {
+    border: 0px solid cyan;
+    width: 94%;
+    top: 55%;
+    left: 3%;
+    -webkit-transform: translateY(-45%);
+            transform: translateY(-45%);
+    color: #2d2d2d;
+    pointer-events: none;
+    text-align: center; }
   .featured-work .card-overlay {
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.8); }
+    background-color: rgba(255, 255, 255, 0.8);
+    display: none; }
   .featured-work .thumb {
     border: 0px solid cyan;
     width: 100%;
@@ -474,7 +491,8 @@ body {
     height: auto; }
   .project-hero-video .ratio-21-9 {
     position: relative;
-    padding: 43% 0 0 0; }
+    padding: 42.8571% 0 0 0;
+    margin-top: -2px; }
   .project-hero-video .ratio-16-9 {
     position: relative;
     padding: 56.25% 0 0 0; }

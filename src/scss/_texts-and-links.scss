@@ -20,8 +20,8 @@ body {
 }
 
 p, ul {
-  font-size: 4rem;
-  line-height: 7rem;
+  font-size: 3.2rem;
+  line-height: 4.6rem;
   word-break: break-word;
 }
 
@@ -36,7 +36,7 @@ h6 {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3.2rem;
   font-weight: 900;
   line-height: 5rem;
 }
@@ -63,6 +63,9 @@ a:hover {
 }
 
 button { font-size: 2.5rem; }
+
+::-moz-selection { background: rgb(225, 225, 225); }
+::selection { background: rgb(225, 225, 225); }
 
 @media only screen and (max-width: $break-1) {
   p, ul {

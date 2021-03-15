@@ -3,12 +3,13 @@
     "projects": [
         {
             "id": "l-amor-descongela",
-            "title": "L'amor decongela",
+            "title": "L'amor descongela",
             "subtitle": "Casa Batlló",
             "description": "This is the project description",
             "category": "Commercials",
             "videoUrl": "https://player.vimeo.com/video/247135849",
-            "posterUrl": "https://www.giphy.com/alien.jpg",
+            "thumbUrl": "img/thumb-l-amor-descongela.jpg",
+            "posterUrl": "img/poster-l-amor-descongela.jpg",
             "featured": true,
             "visible": true,
             "aspectRatio": "ratio-21-9"
@@ -20,7 +21,8 @@
             "description": "This is the project description",
             "category": "Commercials",
             "videoUrl": "https://player.vimeo.com/video/198183495",
-            "posterUrl": "https://www.giphy.com/alien.jpg",
+            "thumbUrl": "img/thumb-esta-nevant-a-la-casa-batllo.jpg",
+            "posterUrl": "img/poster-esta-nevant-a-la-casa-batllo.jpg",
             "featured": true,
             "visible": true,
             "aspectRatio": "ratio-16-9"
@@ -31,11 +33,64 @@
             "subtitle": "Pixel de Stael",
             "description": "This is the project description",
             "category": "Commercials",
-            "videoUrl": "https://vimeo.com/367203798",
-            "posterUrl": "https://www.giphy.com/alien.jpg",
+            "videoUrl": "https://player.vimeo.com/video/367203798",
+            "thumbUrl": "img/thumb-si-fuera-por-mi.jpg",
+            "posterUrl": "img/poster-si-fuera-por-mi.jpg",
             "featured": true,
             "visible": true,
             "aspectRatio": "ratio-16-9"
+        },
+        {
+            "id": "happy-face-trailer",
+            "title": "Happy Face",
+            "subtitle": "A love letter to Steven Spielberg",
+            "description": "This is the project description",
+            "category": "Trailer",
+            "videoUrl": "https://player.vimeo.com/video/98266524",
+            "thumbUrl": "img/thumb-happy-face-trailer.jpg",
+            "posterUrl": "img/poster-happy-face-trailer.jpg",
+            "featured": true,
+            "visible": true,
+            "aspectRatio": "ratio-21-9"
+        },
+        {
+            "id": "arros-covat",
+            "title": "Arrós Covat",
+            "subtitle": "",
+            "description": "This is the project description",
+            "category": "TV Series",
+            "videoUrl": "https://player.vimeo.com/video/66311163",
+            "thumbUrl": "img/thumb-arros-covat.jpg",
+            "posterUrl": "img/poster-arros-covat.jpg",
+            "featured": true,
+            "visible": true,
+            "aspectRatio": "ratio-16-9"
+        },
+        {
+            "id": "puzzled-love",
+            "title": "Puzzled Love",
+            "subtitle": "13 months, 13 directors, 1 love story",
+            "description": "This is the project description",
+            "category": "Featured Film",
+            "videoUrl": "https://player.vimeo.com/video/66295432",
+            "thumbUrl": "img/thumb-puzzled-love.jpg",
+            "posterUrl": "img/poster-puzzled-love.jpg",
+            "featured": true,
+            "visible": true,
+            "aspectRatio": "ratio-21-9"
+        },
+        {
+            "id": "the-true-story-of-the-magical-socks",
+            "title": "The true story of the magical socks",
+            "subtitle": "",
+            "description": "This is the project description",
+            "category": "Advertisement",
+            "videoUrl": "https://player.vimeo.com/video/126310689",
+            "thumbUrl": "img/thumb-the-true-story-of-the-magical-socks.jpg",
+            "posterUrl": "img/poster-the-true-story-of-the-magical-socks.jpg",
+            "featured": true,
+            "visible": true,
+            "aspectRatio": "ratio-21-9"
         }
     ]
 }
