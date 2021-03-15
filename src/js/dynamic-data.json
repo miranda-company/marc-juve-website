@@ -1,12 +1,35 @@
 {
-    "name": "JSON File test",
+    "name": "Marc Juvé - Dynamic Data",
     "projects": [
         {
-            "title": "Project one",
-            "subtitle": "Subtitle",
+            "id": "l-amor-descongela",
+            "title": "L'amor decongela",
+            "subtitle": "Casa Batlló",
             "description": "This is the project description",
-            "category": "commercials",
-            "videoUrl": "https://www.youtube.com/watch?v=4KTJlHHuCfU",
+            "category": "Commercials",
+            "videoUrl": "https://player.vimeo.com/video/247135849",
+            "posterUrl": "https://www.giphy.com/alien.jpg",
+            "featured": true,
+            "visible": true
+        },
+        {
+            "id": "esta-nevant-a-la-casa-batllo",
+            "title": "Està nevant a la Casa Batlló",
+            "subtitle": "Casa Batlló",
+            "description": "This is the project description",
+            "category": "Commercials",
+            "videoUrl": "https://player.vimeo.com/video/198183495",
+            "posterUrl": "https://www.giphy.com/alien.jpg",
+            "featured": true,
+            "visible": true
+        },
+        {
+            "id": "si-fuera-por-mi",
+            "title": "Si fuera por mi",
+            "subtitle": "Pixel de Stael",
+            "description": "This is the project description",
+            "category": "Commercials",
+            "videoUrl": "https://vimeo.com/367203798",
             "posterUrl": "https://www.giphy.com/alien.jpg",
             "featured": true,
             "visible": true

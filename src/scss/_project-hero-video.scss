@@ -1,0 +1,12 @@
+// Project hero video
+/*
+*/
+.project-hero-video {
+    border: $wire;
+    overflow: hidden;
+
+    .project-video {
+        width: 100%;
+        height: auto;
+    }
+}

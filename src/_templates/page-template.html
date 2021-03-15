@@ -2,7 +2,7 @@
 
 <body>
     <!-- Main -->
-    <main class="main-wrap freeze">
+    <main class="main-wrap">
 
         <!-- Main content -->
         {%- block mainContent -%}{%- endblock -%}
@@ -11,13 +11,15 @@
     </main>
 
     <!-- Project view -->
-    <div class="project-wrap">
+    <div class="project-wrap display-none">
 
         <!-- Project content -->
         {%- block projectContent -%}{%- endblock -%}
         <!-- Project content ends -->
 
     </div>
+
+    <div class="overlay"></div>
 
 
 

@@ -20,7 +20,7 @@
                 position: relative;
                 overflow: hidden;
             }
-                .title, .overlay { 
+                .title, .card-overlay { 
                     position: absolute;
                 }
                 .title {
@@ -33,7 +33,7 @@
                     pointer-events: none;
                     text-align: center;
                 }
-                .overlay {
+                .card-overlay {
                     top: 0;
                     left: 0;
                     width: 100%;
