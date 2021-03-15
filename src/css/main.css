@@ -98,7 +98,7 @@ body {
   background-color: #f5f5f5; }
 
 .wrap {
-  border: 1px solid cyan;
+  border: 0px solid cyan;
   position: relative;
   max-width: 1360px;
   margin: 0 auto;
@@ -122,7 +122,7 @@ body {
   display: none; }
 
 .project-wrap {
-  border: 1px solid cyan;
+  border: 0px solid cyan;
   position: absolute;
   top: 0;
   left: 0;
@@ -165,7 +165,7 @@ body {
 /*
 */
 .menu {
-  border: 1px solid cyan;
+  border: 0px solid cyan;
   position: fixed;
   width: 100%;
   height: 5rem;
@@ -174,7 +174,7 @@ body {
   .menu .wrap {
     height: 100%; }
   .menu .container {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     margin: 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -189,7 +189,7 @@ body {
     -webkit-transition: width 1s, opacity 0.5s;
     transition: width 1s, opacity 0.5s; }
   .menu button {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     padding: 0 1rem;
     height: 100%; }
 
@@ -208,7 +208,7 @@ body {
 /*
 */
 .hero-video {
-  border: 1px solid cyan;
+  border: 0px solid cyan;
   overflow: hidden; }
   .hero-video video {
     width: 100%;
@@ -217,12 +217,12 @@ body {
 /*
 */
 .featured-work {
-  border: 1px solid cyan; }
+  border: 0px solid cyan; }
   .featured-work h1 {
     text-align: center;
     margin-bottom: 5rem; }
   .featured-work .container {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     margin: 0 auto 5rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -237,18 +237,18 @@ body {
     -webkit-transition: width 1s, opacity 0.5s;
     transition: width 1s, opacity 0.5s; }
   .featured-work button {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     padding: 0 1rem;
     height: 100%; }
   .featured-work .grid {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
   .featured-work .card {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 50%;
     height: auto;
     padding: 0.5rem;
@@ -259,7 +259,7 @@ body {
   .featured-work .title, .featured-work .card-overlay {
     position: absolute; }
   .featured-work .title {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 94%;
     top: 50%;
     left: 3%;
@@ -275,7 +275,7 @@ body {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.8); }
   .featured-work .thumb {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 100%;
     height: auto; }
   .featured-work .thumb img {
@@ -303,7 +303,7 @@ body {
 /*
 */
 .about {
-  border: 1px solid cyan; }
+  border: 0px solid cyan; }
   .about h1 {
     text-align: center;
     margin-bottom: 5rem; }
@@ -313,7 +313,7 @@ body {
 /*
 */
 .contact {
-  border: 1px solid cyan; }
+  border: 0px solid cyan; }
   .contact h1 {
     text-align: center;
     margin-bottom: 5rem; }
@@ -321,7 +321,7 @@ body {
     text-align: center;
     margin-bottom: 5rem; }
   .contact .container {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     margin: 0 auto 5rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -339,7 +339,7 @@ body {
     -webkit-transition: width 1s, opacity 0.5s;
     transition: width 1s, opacity 0.5s; }
   .contact .container a button {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -357,12 +357,12 @@ body {
 /*
 */
 .archive {
-  border: 1px solid cyan; }
+  border: 0px solid cyan; }
   .archive h1 {
     text-align: center;
     margin-bottom: 5rem; }
   .archive .container {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     margin: 0 auto 5rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -377,19 +377,19 @@ body {
     -webkit-transition: width 1s, opacity 0.5s;
     transition: width 1s, opacity 0.5s; }
   .archive button {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     font-weight: 600;
     padding: 0 1rem;
     height: 100%; }
   .archive .grid {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
   .archive .card {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 33.33%;
     height: auto;
     padding: 0.5rem;
@@ -400,7 +400,7 @@ body {
   .archive .title, .archive .card-overlay {
     position: absolute; }
   .archive .title {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 94%;
     top: 50%;
     left: 3%;
@@ -416,7 +416,7 @@ body {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.8); }
   .archive .thumb {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 100%;
     height: auto; }
   .archive .thumb img {
@@ -467,16 +467,22 @@ body {
 /*
 */
 .project-hero-video {
-  border: 1px solid cyan;
+  border: 0px solid cyan;
   overflow: hidden; }
   .project-hero-video .project-video {
     width: 100%;
     height: auto; }
+  .project-hero-video .ratio-21-9 {
+    position: relative;
+    padding: 43% 0 0 0; }
+  .project-hero-video .ratio-16-9 {
+    position: relative;
+    padding: 56.25% 0 0 0; }
 
 /*
 */
 .project-header {
-  border: 1px solid cyan; }
+  border: 0px solid cyan; }
   .project-header h1, .project-header h2, .project-header h3 {
     text-align: center;
     margin-bottom: 2.5rem; }
@@ -486,23 +492,23 @@ body {
 /*
 */
 .project-description {
-  border: 1px solid cyan; }
+  border: 0px solid cyan; }
   .project-description .about-text {
     text-align: center; }
 
 /*
 */
 .project-related {
-  border: 1px solid cyan; }
+  border: 0px solid cyan; }
   .project-related .grid {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
   .project-related .card {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 50%;
     height: auto;
     padding: 0.5rem;
@@ -513,7 +519,7 @@ body {
   .project-related .title, .project-related .card-overlay {
     position: absolute; }
   .project-related .title {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 94%;
     top: 50%;
     left: 3%;
@@ -529,7 +535,7 @@ body {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.8); }
   .project-related .thumb {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 100%;
     height: auto; }
   .project-related .thumb img {
@@ -557,7 +563,7 @@ body {
 /*
 */
 .project-festivals {
-  border: 1px solid cyan; }
+  border: 0px solid cyan; }
   .project-festivals h1 {
     margin-bottom: 4rem; }
   .project-festivals h1, .project-festivals ul {
@@ -566,11 +572,11 @@ body {
 /*
 */
 .project-poster {
-  border: 1px solid cyan; }
+  border: 0px solid cyan; }
   .project-poster .wrap {
     position: relative; }
   .project-poster .poster {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     margin: 0 auto;
     max-width: 50%; }
   .project-poster .poster img {
@@ -583,7 +589,7 @@ body {
 /*
 */
 .project-download-cta {
-  border: 1px solid cyan; }
+  border: 0px solid cyan; }
   .project-download-cta .wrap {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -598,7 +604,7 @@ body {
 /*
 */
 .project-end {
-  border: 1px solid cyan;
+  border: 0px solid cyan;
   margin-top: 50rem;
   margin-bottom: 50rem; }
   .project-end .wrap {
@@ -606,7 +612,7 @@ body {
     display: -ms-flexbox;
     display: flex; }
   .project-end .end-indicators {
-    border: 1px solid cyan;
+    border: 0px solid cyan;
     width: 12px;
     margin: 0 auto; }
   .project-end .end-indicators svg {

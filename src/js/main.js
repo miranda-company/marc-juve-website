@@ -120,7 +120,7 @@ var Project = {
             var videoSrc = Project.data.videoUrl;
             var vimeoOptions = "?autoplay=1&color=bb0207&title=0&byline=0&portrait=0";
             Project.video.attr("src", videoSrc + vimeoOptions);
-
+            $(".video-wrapper").addClass(Project.data.aspectRatio);
 
             Project.open();
         },
@@ -143,6 +143,7 @@ var Project = {
         App.cons("Closing project");
         Project.mainContainer.addClass("display-none");
         Home.unfreeze();
+        $(".video-wrapper").removeClass(Project.data.aspectRatio);
         Project.isOpen = false;
         Project.data = null;
         Project.video.attr("src", "");

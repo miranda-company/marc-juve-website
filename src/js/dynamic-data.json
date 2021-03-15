@@ -10,7 +10,8 @@
             "videoUrl": "https://player.vimeo.com/video/247135849",
             "posterUrl": "https://www.giphy.com/alien.jpg",
             "featured": true,
-            "visible": true
+            "visible": true,
+            "aspectRatio": "ratio-21-9"
         },
         {
             "id": "esta-nevant-a-la-casa-batllo",
@@ -21,7 +22,8 @@
             "videoUrl": "https://player.vimeo.com/video/198183495",
             "posterUrl": "https://www.giphy.com/alien.jpg",
             "featured": true,
-            "visible": true
+            "visible": true,
+            "aspectRatio": "ratio-16-9"
         },
         {
             "id": "si-fuera-por-mi",
@@ -32,7 +34,8 @@
             "videoUrl": "https://vimeo.com/367203798",
             "posterUrl": "https://www.giphy.com/alien.jpg",
             "featured": true,
-            "visible": true
+            "visible": true,
+            "aspectRatio": "ratio-16-9"
         }
     ]
 }
