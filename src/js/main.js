@@ -131,7 +131,10 @@ var Project = {
         console.clear();
         this.id = projectID;
         this.getData();
-        this.build();
+        this.setData();
+        if (Project.data[0]["related"].length > 1) {
+            Project.relatedWork.init();
+        }
     },
 
     getData: function () {
@@ -141,19 +144,67 @@ var Project = {
 
         Project.data = results;
         App.cons("Found project data for " + Project.data[0]["title"]);
+
+        let keys = Object.keys(Project.data[0]);
+        App.cons("Object keys: " + keys);
     },
 
-    build: function () {
-        Project.title.text(Project.data[0]["title"]);
-        Project.subtitle.text(Project.data[0]["subtitle"]);
-        Project.category.text(Project.data[0]["category"]);
+    setData: function () {
 
-        let videoSrc = Project.data[0]["videoUrl"];
-        let vimeoOptions = "?autoplay=1&color=bb0207&title=0&byline=0&portrait=0";
-        Project.video.attr("src", videoSrc + vimeoOptions);
-        Project.videoWrapper.addClass(Project.data[0]["aspectRatio"]);
+        if (Project.data[0]["videoUrl"]) {
+            let videoSrc = Project.data[0]["videoUrl"];
+            let vimeoOptions = "?autoplay=1&color=bb0207&title=0&byline=0&portrait=0";
+            Project.video.attr("src", videoSrc + vimeoOptions);
+            Project.videoWrapper.addClass(Project.data[0]["aspectRatio"]);
+        } else {
+            Project.videoWrapper.css("display", "none");
+        }
+
+        if (Project.data[0]["title"]) {
+            Project.title.text(Project.data[0]["title"]);
+        } else {
+            Project.title.css("display", "none");
+        }
+
+        if (Project.data[0]["subtitle"]) {
+            Project.subtitle.text(Project.data[0]["subtitle"]);
+        } else {
+            Project.subtitle.css("display", "none");
+        }
+
+        if (Project.data[0]["category"]) {
+            Project.category.text(Project.data[0]["category"]);
+        } else {
+            Project.category.css("display", "none");
+        }
+
+        if (Project.data[0]["description"]) {
+            Project.description.text(Project.data[0]["description"]);
+        } else {
+            Project.description.css("display", "none");
+        }
 
         Project.open();
+    },
+
+    relatedWork: {
+        grid: $("#related-work-grid"),
+
+        init: function () {
+            this.buildCards();
+        },
+
+        buildCards: function () {
+            App.cons("Related work to this project was found: " + Project.data[0]["related"]);
+
+            for (let i = 0; i < Project.data[0]["related"].length; i++) {
+                console.log("ENTRA!!!!!!!!!!!!");
+                let card = document.createElement("div");
+                card.setAttribute("id", Project.data[0]["related"][i]);
+                card.className = "card related-work-card";
+                Project.relatedWork.grid.append(card);
+            }
+        }
     },
 
     open: function () {

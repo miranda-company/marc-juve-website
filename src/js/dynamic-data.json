@@ -12,7 +12,11 @@
             "posterUrl": "img/poster-l-amor-descongela.jpg",
             "featured": true,
             "visible": true,
-            "aspectRatio": "ratio-21-9"
+            "aspectRatio": "ratio-21-9",
+            "related": [
+                "esta-nevant-a-la-casa-batllo",
+                "si-fuera-por-mi"
+            ]
         },
         {
             "id": "esta-nevant-a-la-casa-batllo",
