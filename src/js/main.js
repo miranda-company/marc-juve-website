@@ -125,6 +125,9 @@ var Project = {
     subtitle: $(".project-subtitle"),
     category: $(".project-category"),
     description: $(".about-text"),
+    festivals: $(".festivals"),
+    poster: $(".poster"),
+    posterImage: $(".poster-image"),
     closeBtn: $(".close-btn"),
     relatedWork: [],
     relatedWorkGrid: $("#related-work-grid"),
@@ -173,32 +176,61 @@ var Project = {
             let vimeoOptions = "?autoplay=1&color=bb0207&title=0&byline=0&portrait=0";
             Project.video.attr("src", videoSrc + vimeoOptions);
             Project.videoWrapper.addClass(Project.data[0].aspectRatio);
+            Project.videoWrapper.removeClass("display-none");
         } else {
-            Project.videoWrapper.css("display", "none");
+            Project.videoWrapper.addClass("display-none");
         }
 
         if (Project.data[0].title) {
             Project.title.text(Project.data[0].title);
+            Project.title.removeClass("display-none");
         } else {
-            Project.title.css("display", "none");
+            Project.title.addClass("display-none");
         }
 
+        App.cons("Project subtitle: " + Project.data[0].subtitle);
         if (Project.data[0].subtitle) {
             Project.subtitle.text(Project.data[0].subtitle);
+            Project.subtitle.removeClass("display-none");
         } else {
-            Project.subtitle.css("display", "none");
+            Project.subtitle.addClass("display-none");
         }
 
         if (Project.data[0].category) {
             Project.category.text(Project.data[0].category);
         } else {
-            Project.category.css("display", "none");
+            Project.category.addClass("display-none");
         }
 
         if (Project.data[0].description) {
             Project.description.text(Project.data[0].description);
+            Project.description.removeClass("display-none");
         } else {
-            Project.description.css("display", "none");
+            Project.description.addClass("display-none");
+        }
+
+        if (Project.data[0].festivals.length) {
+            for (var i = 0; i < Project.data[0].festivals.length; i++) {
+                App.cons("Building festival list");
+                let ul = document.createElement("ul");
+                Project.festivals.append(ul);
+
+                let li = document.createElement("li");
+                li.className = "festival";
+                li.innerHTML = Project.data[0].festivals[i];
+                ul.append(li);
+            }
+
+            Project.festivals.removeClass("display-none");
+        } else {
+            Project.festivals.addClass("display-none");
+        }
+
+        if (Project.data[0].posterUrl) {
+            Project.posterImage.attr("src", Project.data[0].posterUrl);
+            Project.poster.removeClass("display-none");
+        } else {
+            Project.poster.addClass("display-none");
         }
     },
 
@@ -215,10 +247,6 @@ var Project = {
 
     getCards: function () {
         Project.relatedWorkCards = $(".related-work-card");
-    },
-
-    cleanRelatedWorkGrid() {
-        $(".related-work-card").remove();
     },
 
     addCardListeners: function () {
@@ -258,7 +286,8 @@ var Project = {
         Project.videoWrapper.removeClass(Project.data[0]["aspectRatio"]);
         Project.video.attr("src", "");
         Project.relatedWork = [];
-        Project.cleanRelatedWorkGrid();
+        $(".related-work-card").remove();
+        $(".festival").remove();
         Project.data = null;
     },
 
