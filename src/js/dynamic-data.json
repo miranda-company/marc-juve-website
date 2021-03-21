@@ -13,8 +13,8 @@
             "featured": true,
             "visible": true,
             "aspectRatio": "ratio-21-9",
-            "related": [
-                "esta-nevant-a-la-casa-batllo",
+            "relatedWorkIDs": [
+                "happy-face-trailer",
                 "si-fuera-por-mi"
             ]
         },
@@ -29,7 +29,8 @@
             "posterUrl": "img/poster-esta-nevant-a-la-casa-batllo.jpg",
             "featured": true,
             "visible": true,
-            "aspectRatio": "ratio-16-9"
+            "aspectRatio": "ratio-16-9",
+            "relatedWorkIDs": []
         },
         {
             "id": "si-fuera-por-mi",
@@ -42,7 +43,11 @@
             "posterUrl": "img/poster-si-fuera-por-mi.jpg",
             "featured": true,
             "visible": true,
-            "aspectRatio": "ratio-16-9"
+            "aspectRatio": "ratio-16-9",
+            "relatedWorkIDs": [
+                "happy-face-trailer",
+                "si-fuera-por-mi"
+            ]
         },
         {
             "id": "happy-face-trailer",
@@ -55,7 +60,8 @@
             "posterUrl": "img/poster-happy-face-trailer.jpg",
             "featured": true,
             "visible": true,
-            "aspectRatio": "ratio-21-9"
+            "aspectRatio": "ratio-21-9",
+            "relatedWorkIDs": []
         },
         {
             "id": "arros-covat",
@@ -68,7 +74,8 @@
             "posterUrl": "img/poster-arros-covat.jpg",
             "featured": true,
             "visible": true,
-            "aspectRatio": "ratio-16-9"
+            "aspectRatio": "ratio-16-9",
+            "relatedWorkIDs": []
         },
         {
             "id": "puzzled-love",
@@ -81,7 +88,8 @@
             "posterUrl": "img/poster-puzzled-love.jpg",
             "featured": true,
             "visible": true,
-            "aspectRatio": "ratio-21-9"
+            "aspectRatio": "ratio-21-9",
+            "relatedWorkIDs": []
         },
         {
             "id": "the-true-story-of-the-magical-socks",
@@ -94,7 +102,8 @@
             "posterUrl": "img/poster-the-true-story-of-the-magical-socks.jpg",
             "featured": true,
             "visible": true,
-            "aspectRatio": "ratio-21-9"
+            "aspectRatio": "ratio-21-9",
+            "relatedWorkIDs": []
         }
     ]
 }
