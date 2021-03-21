@@ -100,7 +100,7 @@
             "title": "Happy Face",
             "subtitle": "A love letter to Steven Spielberg",
             "category": "Trailer",
-            "description": "This is the project description",
+            "description": "",
             "festivals": [
                 "Winner of the Special Mention at Nocturna International Film Festival of Madrid, SPAIN",
                 "Winner best direction Depth of Field International Film Festival, USA",
@@ -124,7 +124,7 @@
                 "Official Selection ACE Jehlum Long Film festival, INDIA"
             ],
             "press": [],
-            "pressKitUrl": "",
+            "pressKitUrl": "https://www.google.com",
             "videoUrl": "https://player.vimeo.com/video/98266524",
             "aspectRatio": "ratio-21-9",
             "thumbUrl": "img/thumb-happy-face-trailer.jpg",

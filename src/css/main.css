@@ -616,18 +616,14 @@ body {
 
 /*
 */
-.project-download-cta {
+.project-press-kit {
   border: 0px solid cyan; }
-  .project-download-cta .wrap {
+  .project-press-kit .wrap {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-  .project-download-cta a {
+  .project-press-kit a {
     margin: 0 auto; }
-
-@media only screen and (max-width: 720px) {
-  .project-poster .poster {
-    max-width: 80%; } }
 
 /*
 */

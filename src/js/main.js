@@ -92,13 +92,37 @@ var Home = {
 
         getCards: function () {
             Home.featuredWork.cards = $(".fw-card");
+            gsap.set([".thumb-image"], { scale: 1 });
+            gsap.set([".card-overlay", ".card-title", ".card-subtitle"], { autoAlpha: 0 });
         },
 
         addCardListeners: function () {
             App.cons("Adding event listeners to " + Home.featuredWork.cardData.length + " featured work cards");
             $.each(Home.featuredWork.cards, function (i) {
                 $(this).on("click", Home.featuredWork.cardHandler);
+                $(this).on("mouseenter", Home.featuredWork.hoverHandler);
+                $(this).on("mouseleave", Home.featuredWork.outHandler);
             });
+        },
+
+        hoverHandler: function (event) {
+            App.cons("Hover on " + this.id);
+            let cardOverlay = $(this).find(".card-overlay");
+            let cardTitle = $(this).find(".card-title");
+            let cardSubtitle = $(this).find(".card-subtitle");
+            let thumbImage = $(this).find(".thumb-image");
+            gsap.to([cardOverlay, cardTitle, cardSubtitle], { autoAlpha: 1 });
+            gsap.to([thumbImage], { duration: 0.8, scale: 1.03 });
+        },
+
+        outHandler: function (event) {
+            App.cons("Out");
+            let cardOverlay = $(this).find(".card-overlay");
+            let cardTitle = $(this).find(".card-title");
+            let cardSubtitle = $(this).find(".card-subtitle");
+            let thumbImage = $(this).find(".thumb-image");
+            gsap.to([cardOverlay, cardTitle, cardSubtitle], { autoAlpha: 0 });
+            gsap.to([thumbImage], { scale: 1 });
         },
 
         cardHandler: function (event) {
@@ -125,9 +149,12 @@ var Project = {
     subtitle: $(".project-subtitle"),
     category: $(".project-category"),
     description: $(".about-text"),
+    festivalsContainer: $(".project-festivals"),
     festivals: $(".festivals"),
     poster: $(".poster"),
     posterImage: $(".poster-image"),
+    pressKit: $(".project-press-kit"),
+    pressKitLink: $(".press-kit-link"),
     closeBtn: $(".close-btn"),
     relatedWork: [],
     relatedWorkGrid: $("#related-work-grid"),
@@ -221,9 +248,9 @@ var Project = {
                 ul.append(li);
             }
 
-            Project.festivals.removeClass("display-none");
+            Project.festivalsContainer.removeClass("display-none");
         } else {
-            Project.festivals.addClass("display-none");
+            Project.festivalsContainer.addClass("display-none");
         }
 
         if (Project.data[0].posterUrl) {
@@ -231,6 +258,13 @@ var Project = {
             Project.poster.removeClass("display-none");
         } else {
             Project.poster.addClass("display-none");
+        }
+
+        if (Project.data[0].pressKitUrl) {
+            Project.pressKitLink.attr("src", Project.data[0].pressKitUrl);
+            Project.pressKit.removeClass("display-none");
+        } else {
+            Project.pressKit.addClass("display-none");
         }
     },
 
@@ -247,13 +281,32 @@ var Project = {
 
     getCards: function () {
         Project.relatedWorkCards = $(".related-work-card");
+        gsap.set([".card-overlay", ".card-title", ".card-subtitle"], { autoAlpha: 0 });
     },
 
     addCardListeners: function () {
         App.cons("Adding event listeners to " + Project.relatedWork.length + " related work cards");
         $.each(Project.relatedWorkCards, function (i) {
             $(this).on("click", Project.cardHandler);
+            $(this).on("mouseenter", Project.hoverHandler);
+            $(this).on("mouseleave", Project.outHandler);
         });
+    },
+
+    hoverHandler: function (event) {
+        App.cons("Hover on " + this.id);
+        let cardOverlay = $(this).find(".card-overlay");
+        let cardTitle = $(this).find(".card-title");
+        let cardSubtitle = $(this).find(".card-subtitle");
+        gsap.to([cardOverlay, cardTitle, cardSubtitle], { autoAlpha: 1 });
+    },
+
+    outHandler: function (event) {
+        App.cons("Out");
+        let cardOverlay = $(this).find(".card-overlay");
+        let cardTitle = $(this).find(".card-title");
+        let cardSubtitle = $(this).find(".card-subtitle");
+        gsap.to([cardOverlay, cardTitle, cardSubtitle], { autoAlpha: 0 });
     },
 
     cardHandler: function (event) {

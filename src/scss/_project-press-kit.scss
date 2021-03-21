@@ -1,7 +1,7 @@
 // Project poster
 /*
 */
-.project-download-cta {
+.project-press-kit {
     border: $wire;
 
     .wrap { display: flex; }
@@ -15,11 +15,6 @@
 }
 
 @media only screen and (max-width: $break-2) {
-    .project-poster {
-        .poster {
-            max-width: 80%;
-        }
-    }
 }
 
 @media only screen and (max-width: $break-3) {
