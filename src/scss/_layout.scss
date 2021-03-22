@@ -21,7 +21,8 @@ body {
   position: relative;
   max-width: $page-max-width;
   margin: 0 auto;
-  padding: 0 10rem;
+  max-width: 1080px;
+  padding: 0rem;
 }
 
 .overlay {

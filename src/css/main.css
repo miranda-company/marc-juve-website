@@ -2,6 +2,7 @@
  * Table of Contents
  * 
  * 1. Layout and base styles
+ * 2. Page specific styles
  */
 /*-- 1. Layout and base styles  --*/
 /*
@@ -101,14 +102,15 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5; }
+  background-color: #ecebec; }
 
 .wrap {
   border: 0px solid cyan;
   position: relative;
   max-width: 1360px;
   margin: 0 auto;
-  padding: 0 10rem; }
+  max-width: 1080px;
+  padding: 0rem; }
 
 .overlay {
   position: fixed;
@@ -116,7 +118,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #f5f5f5;
+  background-color: #ecebec;
   z-index: 99; }
 
 .freeze {
@@ -175,7 +177,7 @@ body {
   position: fixed;
   width: 100%;
   height: 5rem;
-  background-color: #f5f5f5;
+  background-color: #ecebec;
   z-index: 1; }
   .menu .wrap {
     height: 100%; }
@@ -215,7 +217,8 @@ body {
 */
 .hero-video {
   border: 0px solid cyan;
-  overflow: hidden; }
+  overflow: hidden;
+  background-color: #ecebec; }
   .hero-video video {
     width: 100%;
     height: auto; }
@@ -262,29 +265,27 @@ body {
   .featured-work .card-content {
     position: relative;
     overflow: hidden; }
-  .featured-work .card-title, .featured-work .card-subtitle, .featured-work .card-overlay {
-    position: absolute; }
-  .featured-work .card-title {
-    border: 0px solid cyan;
-    width: 94%;
-    top: 50%;
-    left: 3%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    color: #2d2d2d;
-    pointer-events: none;
-    text-align: center; }
-  .featured-work .card-subtitle {
-    border: 0px solid cyan;
-    width: 94%;
-    top: 55%;
-    left: 3%;
-    -webkit-transform: translateY(-45%);
-            transform: translateY(-45%);
-    color: #2d2d2d;
-    pointer-events: none;
-    text-align: center; }
+  .featured-work .card-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   .featured-work .card-overlay {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -459,26 +460,27 @@ body {
 
 /*
 */
-.close-btn {
-  position: fixed;
+/*
+*/
+.close-btn-section {
+  border: 0px solid cyan;
+  position: relative;
+  height: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  top: 5rem;
-  right: 5rem;
-  width: 5rem;
-  height: 5rem;
-  background-color: rgba(255, 255, 255, 0.5);
-  z-index: 3; }
-
-.close-btn:hover {
-  background-color: white; }
+  margin-top: 5rem;
+  margin-bottom: 5rem; }
+  .close-btn-section .close-btn {
+    position: absolute;
+    top: 0;
+    right: 5rem;
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 3; }
+  .close-btn-section .close-btn:hover {
+    background-color: white; }
 
 /*
 */
@@ -499,20 +501,20 @@ body {
 
 /*
 */
-.project-header {
+.project-info {
   border: 0px solid cyan; }
-  .project-header h1, .project-header h2, .project-header h3 {
-    text-align: center;
-    margin-bottom: 2.5rem; }
-  .project-header h2 {
-    font-weight: 200; }
-
-/*
-*/
-.project-description {
-  border: 0px solid cyan; }
-  .project-description .about-text {
+  .project-info h1, .project-info h2, .project-info h3 {
     text-align: center; }
+  .project-info h1 {
+    margin-bottom: 1rem; }
+  .project-info h2 {
+    margin-bottom: 2rem; }
+  .project-info h2 {
+    font-weight: 200; }
+  .project-info .role, .project-info .description {
+    text-align: center; }
+  .project-info .role {
+    margin-top: 5rem; }
 
 /*
 */
@@ -534,29 +536,27 @@ body {
   .project-related .card-content {
     position: relative;
     overflow: hidden; }
-  .project-related .card-title, .project-related .card-subtitle, .project-related .card-overlay {
-    position: absolute; }
-  .project-related .card-title {
-    border: 0px solid cyan;
-    width: 94%;
-    top: 50%;
-    left: 3%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    color: #2d2d2d;
-    pointer-events: none;
-    text-align: center; }
-  .project-related .card-subtitle {
-    border: 0px solid cyan;
-    width: 94%;
-    top: 55%;
-    left: 3%;
-    -webkit-transform: translateY(-45%);
-            transform: translateY(-45%);
-    color: #2d2d2d;
-    pointer-events: none;
-    text-align: center; }
+  .project-related .card-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   .project-related .card-overlay {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -639,5 +639,3 @@ body {
     border: 0px solid cyan;
     width: 12px;
     margin: 0 auto; }
-  .project-end .end-indicators svg {
-    margin-bottom: 5rem; }

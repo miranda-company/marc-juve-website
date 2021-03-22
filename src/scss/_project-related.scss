@@ -20,30 +20,19 @@
                 position: relative;
                 overflow: hidden;
             }
-                .card-title, .card-subtitle, .card-overlay { 
+                .card-info {
+                    display: flex;
                     position: absolute;
-                }
-                .card-title {
-                    border: $wire;
-                    width: 94%;
-                    top: 50%;
-                    left: 3%;
-                    transform: translateY(-50%);
-                    color: $headings-color;
-                    pointer-events: none;
-                    text-align: center;
-                }
-                .card-subtitle {
-                    border: $wire;
-                    width: 94%;
-                    top: 55%;
-                    left: 3%;
-                    transform: translateY(-45%);
-                    color: $headings-color;
-                    pointer-events: none;
-                    text-align: center;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    flex-flow: column;
+                    align-items: center;
+                    justify-content: center;
                 }
                 .card-overlay {
+                    position: absolute;
                     top: 0;
                     left: 0;
                     width: 100%;

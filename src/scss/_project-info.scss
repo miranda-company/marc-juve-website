@@ -1,0 +1,44 @@
+// Project info
+/*
+*/
+.project-info {
+    border: $wire;
+
+    .wrap {}
+        
+        h1, h2, h3 {
+            text-align: center;
+            
+        }
+
+        h1 {
+            margin-bottom: 1rem ; 
+        }
+        h2 {
+            margin-bottom: 2rem;
+        }
+
+        // Exception to h2's font weight
+        h2 { font-weight: 200; }
+
+        .role, .description {
+            text-align: center;
+        }
+
+        .role {
+            margin-top: 5rem;
+        }
+}
+
+
+@media only screen and (max-width: $break-1) {
+   
+}
+
+@media only screen and (max-width: $break-2) {
+   
+}
+
+@media only screen and (max-width: $break-3) {
+    
+}

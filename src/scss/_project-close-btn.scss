@@ -1,22 +1,33 @@
 // Project close btn
 /*
 */
-.close-btn {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 5rem;
-    right: 5rem;
-    width: 5rem;
-    height: 5rem;
-    background-color: rgba(255, 255, 255, 0.5);
-    z-index: 3;
-}
 
-    .close-btn:hover {
-        background-color: rgba(255, 255, 255, 1);
+// Project end
+/*
+*/
+.close-btn-section {
+    border: $wire;
+    position: relative;
+    height: 5rem;
+    display: flex;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    
+    .close-btn {
+        position: absolute;
+        top: 0;
+        right: 5rem;
+        width: 5rem;
+        height: 5rem;
+        background-color: rgba(255, 255, 255, 0.5);
+        z-index: 3;
     }
+    
+        .close-btn:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+}
 
 
 @media only screen and (max-width: $break-1) {

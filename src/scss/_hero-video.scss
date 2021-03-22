@@ -4,7 +4,7 @@
 .hero-video {
     border: $wire;
     overflow: hidden;
-
+    background-color: $background-color;
     video {
         width: 100%;
         height: auto;
