@@ -2,17 +2,25 @@
 /*
 */
 .project-end {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: $wire;
-    margin-top: 50rem;
-    margin-bottom: 50rem;
+    width: 100%;
+    height: 100vh;
+    min-height: 100rem;
+
     .wrap {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
     }
 
-    .end-indicators {
+    #end-indicator {
         border: $wire;
         width: 12px;
-        margin: 0 auto;
+        margin-bottom: 5rem;
     }
 
 }

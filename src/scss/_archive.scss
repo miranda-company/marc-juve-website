@@ -3,16 +3,15 @@
 */
 .archive {
     border: $wire;
-
+    margin-top: 30rem;
     .wrap {}
         h1 {
             text-align: center;
-            margin-bottom: 5rem ;
         }
 
         .container {
             border: $wire;
-            margin: 0 auto 5rem ;
+            margin: 2rem auto 2rem ;
             display: flex;
             justify-content: space-evenly;
             width: 70%;
@@ -22,9 +21,9 @@
         }
             button {
                 border: $wire;
-                font-weight: 600;
                 padding: 0 1rem;
                 height: 100%;
+                font-size: 2rem;
             }
 
     .grid {
@@ -36,7 +35,7 @@
             border: $wire;
             width: 33.33%;
             height: auto;
-            padding: 0.5rem;
+            padding: 0.2rem;
             cursor: pointer;
         }
             .card-content {

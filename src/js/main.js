@@ -1,3 +1,6 @@
+// Scroll Trigger
+gsap.registerPlugin(ScrollTrigger);
+
 var App = {
     showConsole: true,
     transitionSpeed: 0.6,
@@ -5,12 +8,19 @@ var App = {
 
     init: function () {
         this.cons("App initialized, console is active");
-        gsap.to(".overlay", { duration: App.transitionSpeed, autoAlpha: 0 });
         Home.init();
     },
 
     cons: function (msg) {
         this.showConsole ? console.log("- " + msg) : console.log("Console innactive");
+    },
+
+    forceResize: function () {
+        // For a full list of event types: https://developer.mozilla.org/en-US/docs/Web/API/document.createEvent
+        let el = document; // This can be your element on which to trigger the event
+        let event = document.createEvent('HTMLEvents');
+        event.initEvent('resize', true, false);
+        el.dispatchEvent(event);
     }
 }
 
@@ -21,6 +31,9 @@ var Home = {
     init: function () {
         App.cons("Home initialized");
         this.featuredWork.init();
+        gsap.to("#page-overlay-1", { duration: App.transitionSpeed, autoAlpha: 0 });
+        gsap.to("#page-overlay-2", { duration: App.transitionSpeed, opacity: 0 });
+        gsap.to("#end-text", { duration: App.transitionSpeed, opacity: 0, y: 100 });
     },
 
     freeze: function () {
@@ -36,14 +49,10 @@ var Home = {
         grid: $("#featured-work-grid"),
         cardData: [],
         cards: null,
-        cardOverlay: null,
-        cardTitle: null,
-        cardSubtitle: null,
 
         init: function () {
             this.getData();
             this.buildCards();
-            gsap.set([cardOverlay, cardTitle, cardSubtitle], { autoAlpha: 0 });
         },
 
         getData: function () {
@@ -105,7 +114,7 @@ var Home = {
         cardHandler: function (event) {
             App.cons("FW card was clicked: " + this.id);
             let projectId = this.id;
-            gsap.to(".overlay", {
+            gsap.to("#page-overlay-1", {
                 duration: App.transitionSpeed, autoAlpha: 1, onComplete: function () {
                     Home.freeze();
                     Project.init(projectId);
@@ -139,6 +148,8 @@ var Project = {
     rwCards: null,
     relatedWork: [],
     closeBtn: $(".close-btn"),
+    endSection: null,
+    endSectionPos: null,
 
     init: function (projectID) {
         console.clear();
@@ -161,6 +172,7 @@ var Project = {
         this.pressKitAnchorTag = $(".press-kit-anchor-tag");
         this.rwSection = $(".project-related");
         this.rwGrid = $(".related-work-grid");
+        this.endSection = $("#project-end-section");
 
         this.getData();
         this.setData();
@@ -177,6 +189,10 @@ var Project = {
         }
 
         this.open();
+
+        // Force window resize before adding the ScrollTriggers. This calculates the position of project-end-section
+        App.forceResize();
+        this.addScrollTriggers();
     },
 
     getData: function () {
@@ -328,7 +344,7 @@ var Project = {
         App.cons("Related card was clicked: " + this.id);
         let projectId = this.id;
 
-        gsap.to(".overlay", {
+        gsap.to("#page-overlay-1", {
             duration: App.transitionSpeed, autoAlpha: 1, onComplete: function () {
                 Project.reset();
                 Project.init(projectId);
@@ -344,7 +360,7 @@ var Project = {
         this.closeBtn.on("click", this.closeHandler);
 
         // Project fade in
-        gsap.to(".overlay", {
+        gsap.to("#page-overlay-1", {
             delay: 0.4, duration: App.transitionSpeed, autoAlpha: 0
         });
     },
@@ -357,6 +373,10 @@ var Project = {
         $(".related-work-card").remove();
         $(".festival").remove();
         Project.data = null;
+        Project.endSection = null;
+        Project.endSectionPos = null;
+        ScrollTrigger.getById("pinCloseBtn").kill(true);
+        ScrollTrigger.getById("projectEnd").kill(true);
     },
 
     closeHandler: function (event) {
@@ -364,12 +384,74 @@ var Project = {
         Project.reset();
         Project.mainContainer.addClass("display-none");
         Home.unfreeze();
+        gsap.set("#page-overlay-1", { autoAlpha: 1 });
+        gsap.to("#page-overlay-1", { duration: 1.6, autoAlpha: 0 });
 
         Project.isOpen = false;
 
         //Scroll back to Home > Featured Work
-        var elmnToScrollTo = Home.featuredWork.mainContainer[0];
+        let elmnToScrollTo = Home.featuredWork.mainContainer[0];
         elmnToScrollTo.scrollIntoView();
+    },
+
+    addScrollTriggers: function () {
+        // Pin close button when scrolls down
+        gsap.to(Project.closeBtn, {
+            scrollTrigger: {
+                id: "pinCloseBtn",
+                trigger: ".close-btn-section",
+                start: "top top",
+                endTrigger: Project.endSection,
+                end: "top 10%",
+                pinSpacing: false,
+                pin: true,
+                // markers: true
+            }
+        });
+
+        // Fade project when scrolled all the way down
+        gsap.to("#end-text", {
+            scrollTrigger: {
+                id: "projectEnd",
+                trigger: Project.endSection,
+                toggleActions: "play none none reset",
+                start: "top 10%",
+                end: "top 10%",
+                // markers: true
+            },
+            duration: 0.8,
+            opacity: 1,
+            y: 0
+        });
+
+        gsap.to("#end-indicator", {
+            scrollTrigger: {
+                id: "projectEnd",
+                trigger: Project.endSection,
+                toggleActions: "play none none reset",
+                start: "top 10%",
+                end: "top 10%",
+                // markers: true
+            },
+            delay: 0.6,
+            duration: 1,
+            rotation: 360
+        });
+
+        gsap.to("#page-overlay-2", {
+            scrollTrigger: {
+                id: "projectEnd",
+                trigger: Project.endSection,
+                toggleActions: "play none none reset",
+                start: "top 10%",
+                end: "top 10%",
+                // markers: true
+            },
+            delay: 1.6,
+            duration: 1,
+            opacity: 1,
+            onComplete: Project.closeHandler
+        });
     }
 }
 

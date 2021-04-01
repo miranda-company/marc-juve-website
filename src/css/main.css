@@ -81,6 +81,9 @@ a {
 a:hover {
   color: #6a757e; }
 
+.selected {
+  color: #aa2f2f; }
+
 button {
   font-size: 2.5rem; }
 
@@ -129,7 +132,8 @@ body {
   width: 100%;
   height: 100%;
   background-color: #ecebec;
-  z-index: 99; }
+  z-index: 99;
+  pointer-events: none; }
 
 .freeze {
   height: 100%;
@@ -141,7 +145,7 @@ body {
 
 .project-wrap {
   border: 0px solid cyan;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -242,7 +246,7 @@ body {
     text-align: center; }
   .featured-work .container {
     border: 0px solid cyan;
-    margin: 0 auto 5rem;
+    margin: 2rem auto 2rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -258,15 +262,15 @@ body {
   .featured-work button {
     border: 0px solid cyan;
     padding: 0 1rem;
-    height: 100%; }
+    height: 100%;
+    font-size: 2rem; }
   .featured-work .grid {
     border: 0px solid cyan;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    margin-top: 5rem; }
+        flex-wrap: wrap; }
   .featured-work .card {
     border: 0px solid cyan;
     width: 50%;
@@ -331,7 +335,8 @@ body {
 /*
 */
 .about {
-  border: 0px solid cyan; }
+  border: 0px solid cyan;
+  margin-top: 30rem; }
   .about h1 {
     text-align: center;
     margin-bottom: 5rem; }
@@ -347,6 +352,8 @@ body {
     margin-bottom: 5rem; }
   .contact .contact-text {
     text-align: center;
+    font-size: 3.5rem;
+    line-height: 6rem;
     margin-bottom: 5rem; }
   .contact .container {
     border: 0px solid cyan;
@@ -385,13 +392,13 @@ body {
 /*
 */
 .archive {
-  border: 0px solid cyan; }
+  border: 0px solid cyan;
+  margin-top: 30rem; }
   .archive h1 {
-    text-align: center;
-    margin-bottom: 5rem; }
+    text-align: center; }
   .archive .container {
     border: 0px solid cyan;
-    margin: 0 auto 5rem;
+    margin: 2rem auto 2rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -406,9 +413,9 @@ body {
     transition: width 1s, opacity 0.5s; }
   .archive button {
     border: 0px solid cyan;
-    font-weight: 600;
     padding: 0 1rem;
-    height: 100%; }
+    height: 100%;
+    font-size: 2rem; }
   .archive .grid {
     border: 0px solid cyan;
     display: -webkit-box;
@@ -420,7 +427,7 @@ body {
     border: 0px solid cyan;
     width: 33.33%;
     height: auto;
-    padding: 0.5rem;
+    padding: 0.2rem;
     cursor: pointer; }
   .archive .card-content {
     position: relative;
@@ -481,13 +488,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   margin-top: 5rem;
-  margin-bottom: 5rem; }
+  margin-bottom: 5rem;
+  z-index: 4; }
   .close-btn-section .close-btn {
     position: absolute;
     top: 0;
     right: 5rem;
     width: 5rem;
     height: 5rem;
+    padding: 2rem;
     background-color: rgba(255, 255, 255, 0.5);
     z-index: 3; }
   .close-btn-section .close-btn:hover {
@@ -549,7 +558,7 @@ body {
     border: 0px solid cyan;
     width: 50%;
     height: auto;
-    padding: 0.5rem;
+    padding: 0.2rem;
     cursor: pointer; }
   .project-related .card-content {
     position: relative;
@@ -646,14 +655,34 @@ body {
 /*
 */
 .project-end {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border: 0px solid cyan;
-  margin-top: 50rem;
-  margin-bottom: 50rem; }
+  width: 100%;
+  height: 100vh;
+  min-height: 100rem; }
   .project-end .wrap {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
-  .project-end .end-indicators {
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column; }
+  .project-end #end-indicator {
     border: 0px solid cyan;
     width: 12px;
-    margin: 0 auto; }
+    margin-bottom: 5rem; }
