@@ -79,7 +79,10 @@ a:hover {
   color: #aa2f2f;
 }
 
-button { font-size: 2.5rem; }
+button { 
+  font-size: 2.5rem;
+  font-family: $heading-font;
+}
 
 ::-moz-selection { background: rgb(225, 225, 225); }
 ::selection { background: rgb(225, 225, 225); }

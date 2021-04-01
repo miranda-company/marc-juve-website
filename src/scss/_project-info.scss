@@ -8,14 +8,17 @@
         
         h1, h2, h3 {
             text-align: center;
-            
         }
 
         h1 {
-            margin-bottom: 1rem ; 
+            margin-bottom: 0.5rem ; 
         }
         h2 {
             margin-bottom: 2rem;
+        }
+
+        h3 {
+            margin-top: 6rem;
         }
 
         // Exception to h2's font weight
@@ -23,10 +26,17 @@
 
         .role, .description {
             text-align: center;
+            max-width: 50rem;
+            margin: 0 auto;
         }
 
         .role {
-            margin-top: 5rem;
+            margin-top: 2rem;
+        }
+
+        .project-client  {
+            text-align: center;
+            margin-bottom: 1.5rem;
         }
 }
 

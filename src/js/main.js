@@ -2,7 +2,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
 var App = {
-    showConsole: false,
+    showConsole: true,
     transitionSpeed: 0.6,
     isDynamicData: false,
 
@@ -51,10 +51,13 @@ var Home = {
         grid: $("#featured-work-grid"),
         cardData: [],
         cards: null,
+        filterBtns: null,
 
         init: function () {
             this.getData();
             this.buildCards();
+            this.filterBtns = $(".filter-fw-btn");
+            this.addFilterListeners();
         },
 
         getData: function () {
@@ -81,6 +84,17 @@ var Home = {
             Home.featuredWork.cards = $(".fw-card");
             gsap.set([".thumb-image"], { scale: 1 });
             gsap.set([".card-overlay", ".card-title", ".card-subtitle"], { opacity: 0 });
+        },
+
+        filterHandler: function (event) {
+            App.cons("Filter btn clicked " + this.id);
+        },
+
+        addFilterListeners: function () {
+            App.cons("Adding events to filters");
+            $.each(Home.featuredWork.filterBtns, function (i) {
+                $(this).on("click", Home.featuredWork.filterHandler);
+            });
         },
 
         addCardListeners: function () {
@@ -136,6 +150,7 @@ var Project = {
     video: null,
     title: null,
     subtitle: null,
+    clientProject: null,
     category: null,
     role: null,
     description: null,
@@ -163,6 +178,7 @@ var Project = {
         this.video = $(".project-video");
         this.title = $(".project-title");
         this.subtitle = $(".project-subtitle");
+        this.clientProject = $(".project-client");
         this.category = $(".project-category");
         this.role = $(".role");
         this.description = $(".description");
@@ -237,6 +253,14 @@ var Project = {
             Project.subtitle.removeClass("display-none");
         } else {
             Project.subtitle.addClass("display-none");
+        }
+
+        // Replace client/project info
+        if (Project.data[0].clientProject) {
+            Project.clientProject.text(Project.data[0].clientProject);
+            Project.clientProject.removeClass("display-none");
+        } else {
+            Project.clientProject.addClass("display-none");
         }
 
         // Replace category text info
@@ -387,7 +411,7 @@ var Project = {
         Project.mainContainer.addClass("display-none");
         Home.unfreeze();
         gsap.set("#page-overlay-1", { autoAlpha: 1 });
-        gsap.to("#page-overlay-1", { duration: 1.6, autoAlpha: 0 });
+        gsap.to("#page-overlay-1", { duration: 0.8, autoAlpha: 0 });
 
         Project.isOpen = false;
 
@@ -436,7 +460,7 @@ var Project = {
                 // markers: true
             },
             delay: 0.6,
-            duration: 1,
+            duration: 0.8,
             rotation: 360
         });
 
@@ -450,7 +474,7 @@ var Project = {
                 // markers: true
             },
             delay: 1.6,
-            duration: 1,
+            duration: 0.8,
             opacity: 1,
             onComplete: Project.closeHandler
         });
@@ -465,7 +489,12 @@ var DynamicData = {
     },
 
     get: function () {
+        // Dynamic data on local machine
         let requestURL = 'http://localhost:3000/js/dynamic-data.json';
+
+        //Dynamic data live server
+        // let requestURL = 'https://www.labaula.net/terrenodepruebas/crisantemo/js/dynamic-data.json';
+
         let request = new XMLHttpRequest();
         request.open('GET', requestURL);
         request.responseType = 'json';

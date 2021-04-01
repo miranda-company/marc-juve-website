@@ -85,7 +85,8 @@ a:hover {
   color: #aa2f2f; }
 
 button {
-  font-size: 2.5rem; }
+  font-size: 2.5rem;
+  font-family: "Futura Bold", sans-serif; }
 
 ::-moz-selection {
   background: #e1e1e1; }
@@ -526,15 +527,22 @@ body {
   .project-info h1, .project-info h2, .project-info h3 {
     text-align: center; }
   .project-info h1 {
-    margin-bottom: 1rem; }
+    margin-bottom: 0.5rem; }
   .project-info h2 {
     margin-bottom: 2rem; }
+  .project-info h3 {
+    margin-top: 6rem; }
   .project-info h2 {
     font-weight: 200; }
   .project-info .role, .project-info .description {
-    text-align: center; }
+    text-align: center;
+    max-width: 50rem;
+    margin: 0 auto; }
   .project-info .role {
-    margin-top: 5rem; }
+    margin-top: 2rem; }
+  .project-info .project-client {
+    text-align: center;
+    margin-bottom: 1.5rem; }
 
 /*
 */
