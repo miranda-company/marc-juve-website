@@ -2,7 +2,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
 var App = {
-    showConsole: true,
+    showConsole: false,
     transitionSpeed: 0.6,
     isDynamicData: false,
 
@@ -12,7 +12,9 @@ var App = {
     },
 
     cons: function (msg) {
-        this.showConsole ? console.log("- " + msg) : console.log("Console innactive");
+        if (this.showConsole) {
+            console.log("- " + msg);
+        }
     },
 
     forceResize: function () {
