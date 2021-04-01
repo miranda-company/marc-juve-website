@@ -1,11 +1,24 @@
 // Texts and links
 /*
 */
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;600;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+@font-face {
+  font-family: 'Futura Bold';
+  src: url('../fonts/FuturaPTBold.otf');
+}
 
-$heading-font: "Nunito Sans", sans-serif;
-$paragraph-font: "Cormorant Garamond", serif;
+@font-face {
+  font-family: 'Futura Italic';
+  src: url('../fonts/FuturaPTMediumOblique.otf');
+}
+
+@font-face {
+  font-family: 'Garamond';
+  src: url('../fonts/CormorantGaramondRegular.ttf');
+}
+
+$heading-font: "Futura Bold", sans-serif;
+$subheading-font: "Futura Italic", sans-serif;
+$paragraph-font: "Garamond", serif;
 
 html { font-size: $base-unit; }
 
@@ -20,30 +33,30 @@ body {
 }
 
 p, ul {
-  font-size: 3.2rem;
-  line-height: 4.6rem;
+  font-size: 2.5rem;
+  line-height: 4.5rem;
   word-break: break-word;
 }
 
 h1,
-h2,
 h3,
 h4,
 h5,
 h6 {
   font-family: $heading-font;
   color: $headings-color;
+  text-transform: uppercase;
 }
 
 h1 {
-  font-size: 3.2rem;
-  font-weight: 900;
+  font-size: 3rem;
   line-height: 5rem;
 }
 
 h2 {
+  font-family: $subheading-font ;
   font-size: 3rem;
-  font-weight: 900;
+  color: $headings-color;
 }
 
 h3 {

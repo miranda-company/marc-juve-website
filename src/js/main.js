@@ -36,10 +36,14 @@ var Home = {
         grid: $("#featured-work-grid"),
         cardData: [],
         cards: null,
+        cardOverlay: null,
+        cardTitle: null,
+        cardSubtitle: null,
 
         init: function () {
             this.getData();
             this.buildCards();
+            gsap.set([cardOverlay, cardTitle, cardSubtitle], { autoAlpha: 0 });
         },
 
         getData: function () {
@@ -65,7 +69,7 @@ var Home = {
         getCards: function () {
             Home.featuredWork.cards = $(".fw-card");
             gsap.set([".thumb-image"], { scale: 1 });
-            gsap.set([".card-overlay", ".card-title", ".card-subtitle"], { autoAlpha: 0 });
+            gsap.set([".card-overlay", ".card-title", ".card-subtitle"], { opacity: 0 });
         },
 
         addCardListeners: function () {
@@ -83,9 +87,9 @@ var Home = {
             let cardSubtitle = $(this).find(".card-subtitle");
             let thumbImage = $(this).find(".thumb-image");
             gsap.set([cardOverlay, cardTitle, cardSubtitle], { autoAlpha: 0 });
-            gsap.to([cardOverlay], { duration: 0.4, autoAlpha: 1, ease: Power1.easeInOut });
-            gsap.to([cardTitle, cardSubtitle], { delay: 0.2, duration: 0.8, autoAlpha: 1, ease: Power1.easeInOut });
-            gsap.to([thumbImage], { duration: 0.4, scale: 1.02 });
+            gsap.to([cardOverlay], { duration: 0.4, autoAlpha: 1, ease: Power1.easeInOut, overwrite: true });
+            gsap.to([cardTitle, cardSubtitle], { duration: 0.8, autoAlpha: 1, ease: Power1.easeInOut, overwrite: true });
+            gsap.to([thumbImage], { duration: 0.4, scale: 1.02, overwrite: true });
         },
 
         outHandler: function (event) {
@@ -93,8 +97,9 @@ var Home = {
             let cardTitle = $(this).find(".card-title");
             let cardSubtitle = $(this).find(".card-subtitle");
             let thumbImage = $(this).find(".thumb-image");
-            gsap.to([cardOverlay, cardTitle, cardSubtitle], { autoAlpha: 0 });
-            gsap.to([thumbImage], { scale: 1 });
+
+            gsap.to([cardOverlay, cardTitle, cardSubtitle], { autoAlpha: 0, overwrite: true });
+            gsap.to([thumbImage], { scale: 1, overwrite: true });
         },
 
         cardHandler: function (event) {
@@ -225,7 +230,7 @@ var Project = {
 
         // Replace role info
         if (Project.data[0].role) {
-            Project.role.text("| " + Project.data[0].role + " |");
+            Project.role.text(Project.data[0].role);
             Project.role.removeClass("display-none");
         } else {
             Project.role.addClass("display-none");
@@ -315,8 +320,8 @@ var Project = {
         let cardTitle = $(this).find(".card-title");
         let cardSubtitle = $(this).find(".card-subtitle");
         let thumbImage = $(this).find(".thumb-image");
-        gsap.to([cardOverlay, cardTitle, cardSubtitle], { autoAlpha: 0 });
-        gsap.to([thumbImage], { scale: 1 });
+        gsap.to([cardOverlay, cardTitle, cardSubtitle], { autoAlpha: 0, overwrite: true });
+        gsap.to([thumbImage], { scale: 1, overwrite: true });
     },
 
     cardHandler: function (event) {
@@ -445,12 +450,12 @@ Card.prototype.build = function () {
     cardInfo.className = "card-info";
     cardContent.append(cardInfo);
 
-    let cardTitle = document.createElement("h2");
+    let cardTitle = document.createElement("h1");
     cardTitle.className = "card-title";
     cardTitle.innerHTML = this.title;
     cardInfo.append(cardTitle);
 
-    let cardSubtitle = document.createElement("h3");
+    let cardSubtitle = document.createElement("p");
     cardSubtitle.className = "card-subtitle";
     cardSubtitle.innerHTML = this.subtitle;
     cardInfo.append(cardSubtitle);

@@ -7,7 +7,6 @@
     .wrap {}
         h1 {
             text-align: center;
-            margin-bottom: 5rem ;
         }
 
         .container {
@@ -30,12 +29,13 @@
         border: $wire;
         display: flex;
         flex-wrap: wrap;
+        margin-top: 5rem;
     }
         .card {
             border: $wire;
             width: 50%;
             height: auto;
-            padding: 0.5rem;
+            padding: 0.2rem;
             cursor: pointer;
         }
             .card-content {
