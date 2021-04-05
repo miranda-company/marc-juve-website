@@ -33,8 +33,8 @@ body {
 }
 
 p, ul {
-  font-size: 2.5rem;
-  line-height: 4.5rem;
+  font-size: 1.66rem;
+  line-height: 3rem;
   word-break: break-word;
 }
 
@@ -55,12 +55,12 @@ h1 {
 
 h2 {
   font-family: $subheading-font ;
-  font-size: 3rem;
+  font-size: 1.6rem;
   color: $headings-color;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
@@ -76,7 +76,7 @@ a:hover {
 }
 
 .selected {
-  color: #aa2f2f;
+  color: $red;
 }
 
 button { 

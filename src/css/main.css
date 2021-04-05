@@ -46,8 +46,8 @@ body {
   color: #2d2d2d; }
 
 p, ul {
-  font-size: 2.5rem;
-  line-height: 4.5rem;
+  font-size: 1.66rem;
+  line-height: 3rem;
   word-break: break-word; }
 
 h1,
@@ -65,11 +65,11 @@ h1 {
 
 h2 {
   font-family: "Futura Italic", sans-serif;
-  font-size: 3rem;
+  font-size: 1.6rem;
   color: #2d2d2d; }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600; }
 
 a {
@@ -82,7 +82,7 @@ a:hover {
   color: #6a757e; }
 
 .selected {
-  color: #aa2f2f; }
+  color: #C60909; }
 
 button {
   font-size: 2.5rem;
@@ -159,6 +159,12 @@ body {
 
 .gutter {
   margin-bottom: 10rem; }
+
+.hide {
+  display: none; }
+
+.show {
+  display: block; }
 
 @media only screen and (max-width: 1024px) {
   .wrap {
@@ -243,7 +249,7 @@ body {
 */
 .featured-work {
   border: 0px solid cyan; }
-  .featured-work h1 {
+  .featured-work h3 {
     text-align: center; }
   .featured-work .container {
     border: 0px solid cyan;
@@ -300,6 +306,8 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center; }
+  .featured-work .card-subtitle {
+    font-size: 2.5rem; }
   .featured-work .card-overlay {
     position: absolute;
     top: 0;
@@ -338,23 +346,31 @@ body {
 .about {
   border: 0px solid cyan;
   margin-top: 30rem; }
-  .about h1 {
+  .about .wrap {
+    padding: 0 6rem; }
+  .about h3 {
     text-align: center;
-    margin-bottom: 5rem; }
+    margin-bottom: 2rem; }
   .about .about-text {
-    text-align: center; }
+    text-align: center;
+    font-size: 3rem;
+    line-height: 5rem; }
+
+@media only screen and (max-width: 720px) {
+  .about .about-text {
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 4.2rem; } }
 
 /*
 */
 .contact {
   border: 0px solid cyan; }
-  .contact h1 {
+  .contact h3 {
     text-align: center;
-    margin-bottom: 5rem; }
+    margin-bottom: 2rem; }
   .contact .contact-text {
     text-align: center;
-    font-size: 3.5rem;
-    line-height: 6rem;
     margin-bottom: 5rem; }
   .contact .container {
     border: 0px solid cyan;
@@ -395,7 +411,7 @@ body {
 .archive {
   border: 0px solid cyan;
   margin-top: 30rem; }
-  .archive h1 {
+  .archive h3 {
     text-align: center; }
   .archive .container {
     border: 0px solid cyan;
@@ -529,9 +545,9 @@ body {
   .project-info h1 {
     margin-bottom: 0.5rem; }
   .project-info h2 {
-    margin-bottom: 2rem; }
+    margin-bottom: 6rem; }
   .project-info h3 {
-    margin-top: 6rem; }
+    margin-top: 2rem; }
   .project-info h2 {
     font-weight: 200; }
   .project-info .role, .project-info .description {
@@ -590,6 +606,8 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center; }
+  .project-related .card-subtitle {
+    font-size: 2.5rem; }
   .project-related .card-overlay {
     position: absolute;
     top: 0;
@@ -658,7 +676,11 @@ body {
     display: -ms-flexbox;
     display: flex; }
   .project-press-kit a {
-    margin: 0 auto; }
+    font-size: 1.5rem;
+    margin: 0 auto;
+    text-decoration: none; }
+  .project-press-kit span {
+    text-decoration: underline; }
 
 /*
 */
@@ -693,4 +715,6 @@ body {
   .project-end #end-indicator {
     border: 0px solid cyan;
     width: 12px;
-    margin-bottom: 5rem; }
+    margin-bottom: 2rem; }
+  .project-end .end-indicator-star {
+    fill: #C60909; }

@@ -2,8 +2,7 @@
     "name": "www.marcjuve.com - Dynamic Data - Last updated: 16 March 2021",
     "project-categories": [
         "commercials",
-        "films",
-        "tv-series",
+        "film-and-tv-series",
         "music-videos"
     ],
     "projects": [
@@ -12,8 +11,10 @@
             "title": "L'amor descongela",
             "subtitle": "",
             "clientProject": "Casa Batlló",
-            "categoryText": "Commercials",
-            "category": "commercials",
+            "categoryText": "Commercial",
+            "categoryFilter": [
+                "commercials"
+            ],
             "festivals": [],
             "press": [],
             "pressKitUrl": "",
@@ -23,17 +24,21 @@
             "aspectRatio": "ratio-21-9",
             "thumbUrl": "img/thumb-l-amor-descongela.jpg",
             "posterUrl": "",
-            "featured": true,
             "visible": true,
-            "relatedWorkIDs": []
+            "relatedWorkIDs": [],
+            "featured": true,
+            "featuredThumbTitle": "L'amor descongela",
+            "featuredThumbSubtitle": "Casa Batlló"
         },
         {
             "id": "esta-nevant-a-la-casa-batllo",
             "title": "Està nevant a la Casa Batlló",
             "subtitle": "",
             "clientProject": "Casa Batlló",
-            "categoryText": "Commercials",
-            "category": "commercials",
+            "categoryText": "Commercial",
+            "categoryFilter": [
+                "commercials"
+            ],
             "role": "Director",
             "description": "Produced by Malditos Produce for Casa Batlló",
             "festivals": [],
@@ -43,9 +48,11 @@
             "aspectRatio": "ratio-16-9",
             "thumbUrl": "img/thumb-esta-nevant-a-la-casa-batllo.jpg",
             "posterUrl": "",
-            "featured": true,
             "visible": true,
-            "relatedWorkIDs": []
+            "relatedWorkIDs": [],
+            "featured": true,
+            "featuredThumbTitle": "Està nevant a la Casa Batlló",
+            "featuredThumbSubtitle": "Casa Batlló"
         },
         {
             "id": "si-fuera-por-mi",
@@ -53,7 +60,9 @@
             "subtitle": "",
             "clientProject": "Pixel de Stael",
             "categoryText": "Music videos",
-            "category": "music-videos",
+            "categoryFilter": [
+                "music-videos"
+            ],
             "role": "Director",
             "description": "",
             "festivals": [],
@@ -63,12 +72,14 @@
             "aspectRatio": "ratio-16-9",
             "thumbUrl": "img/thumb-si-fuera-por-mi.jpg",
             "posterUrl": "",
-            "featured": true,
             "visible": true,
             "relatedWorkIDs": [
                 "el-mon-em-vol-connectar",
                 "esperanca"
-            ]
+            ],
+            "featured": true,
+            "featuredThumbTitle": "Si fuera por mi",
+            "featuredThumbSubtitle": "Pixel de Stael"
         },
         {
             "id": "el-mon-em-vol-connectar",
@@ -76,7 +87,9 @@
             "subtitle": "Pixel de Stael",
             "clientProject": "Pixel de Stael",
             "categoryText": "Music videos",
-            "category": "music-videos",
+            "categoryFilter": [
+                "music-videos"
+            ],
             "role": "Director",
             "description": "",
             "festivals": [],
@@ -86,12 +99,14 @@
             "aspectRatio": "ratio-16-9",
             "thumbUrl": "img/thumb-el-mon-em-vol-connectar.jpg",
             "posterUrl": "",
-            "featured": false,
             "visible": true,
             "relatedWorkIDs": [
                 "si-fuera-por-mi",
                 "esperanca"
-            ]
+            ],
+            "featured": false,
+            "featuredThumbTitle": "",
+            "featuredThumbSubtitle": ""
         },
         {
             "id": "esperanca",
@@ -99,7 +114,9 @@
             "subtitle": "Pixel de Stael",
             "clientProject": "Pixel de Stael",
             "categoryText": "Music videos",
-            "category": "music-videos",
+            "categoryFilter": [
+                "music-videos"
+            ],
             "role": "Director",
             "description": "",
             "festivals": [],
@@ -109,20 +126,24 @@
             "aspectRatio": "ratio-16-9",
             "thumbUrl": "img/thumb-esperanca.jpg",
             "posterUrl": "",
-            "featured": false,
             "visible": true,
             "relatedWorkIDs": [
                 "si-fuera-por-mi",
                 "el-mon-em-vol-connectar"
-            ]
+            ],
+            "featured": false,
+            "featuredThumbTitle": "",
+            "featuredThumbSubtitle": ""
         },
         {
             "id": "happy-face-trailer",
             "title": "Happy Face (Trailer)",
             "subtitle": "A love letter to Steven Spielberg",
             "clientProject": "",
-            "categoryText": "Trailer",
-            "category": "films",
+            "categoryText": "Short Film",
+            "categoryFilter": [
+                "film-and-tv-series"
+            ],
             "role": "Director",
             "description": "Produced by ESCAC Films in collaboration with The Berklee College of Music & La Fémis",
             "festivals": [
@@ -153,11 +174,13 @@
             "aspectRatio": "ratio-21-9",
             "thumbUrl": "img/thumb-happy-face-trailer.jpg",
             "posterUrl": "img/poster-happy-face.jpg",
-            "featured": true,
             "visible": true,
             "relatedWorkIDs": [
                 "happy-face"
-            ]
+            ],
+            "featured": true,
+            "featuredThumbTitle": "Happy Face",
+            "featuredThumbSubtitle": "Short Film"
         },
         {
             "id": "happy-face",
@@ -165,7 +188,9 @@
             "subtitle": "A love letter to Steven Spielberg",
             "clientProject": "",
             "categoryText": "Short Film",
-            "category": "films",
+            "categoryFilter": [
+                "film-and-tv-series"
+            ],
             "role": "Director",
             "description": "Produced by ESCAC Films in collaboration with The Berklee College of Music & La Fémis",
             "festivals": [
@@ -196,11 +221,13 @@
             "aspectRatio": "ratio-21-9",
             "thumbUrl": "img/thumb-happy-face.jpg",
             "posterUrl": "img/poster-happy-face.jpg",
-            "featured": false,
             "visible": true,
             "relatedWorkIDs": [
                 "happy-face-trailer"
-            ]
+            ],
+            "featured": false,
+            "featuredThumbTitle": "",
+            "featuredThumbSubtitle": ""
         },
         {
             "id": "arros-covat-ep9",
@@ -208,7 +235,9 @@
             "subtitle": "Arròs amb llamàntols i una gamba",
             "clientProject": "",
             "categoryText": "TV Series",
-            "category": "tv-series",
+            "categoryFilter": [
+                "film-and-tv-series"
+            ],
             "role": "Co-director",
             "description": "Produced by Escándalo Films and TV3",
             "festivals": [],
@@ -218,13 +247,15 @@
             "aspectRatio": "ratio-16-9",
             "thumbUrl": "img/thumb-arros-covat-ep9.jpg",
             "posterUrl": "",
-            "featured": false,
             "visible": true,
             "relatedWorkIDs": [
                 "arros-covat-ep10",
                 "arros-covat-ep11",
                 "arros-covat-ep12"
-            ]
+            ],
+            "featured": false,
+            "featuredThumbTitle": "",
+            "featuredThumbSubtitle": ""
         },
         {
             "id": "arros-covat-ep10",
@@ -232,7 +263,9 @@
             "subtitle": "Arròs sense delícies",
             "clientProject": "",
             "categoryText": "TV Series",
-            "category": "tv-series",
+            "categoryFilter": [
+                "film-and-tv-series"
+            ],
             "role": "Co-director",
             "description": "Produced by Escándalo Films and TV3",
             "festivals": [],
@@ -242,13 +275,15 @@
             "aspectRatio": "ratio-16-9",
             "thumbUrl": "img/thumb-arros-covat-ep10.jpg",
             "posterUrl": "",
-            "featured": false,
             "visible": true,
             "relatedWorkIDs": [
                 "arros-covat-ep9",
                 "arros-covat-ep11",
                 "arros-covat-ep12"
-            ]
+            ],
+            "featured": false,
+            "featuredThumbTitle": "",
+            "featuredThumbSubtitle": ""
         },
         {
             "id": "arros-covat-ep11",
@@ -256,7 +291,9 @@
             "subtitle": "Arròs del passat Nadal",
             "clientProject": "",
             "categoryText": "TV Series",
-            "category": "tv-series",
+            "categoryFilter": [
+                "film-and-tv-series"
+            ],
             "role": "Co-director",
             "description": "Produced by Escándalo Films and TV3",
             "festivals": [],
@@ -266,13 +303,15 @@
             "aspectRatio": "ratio-16-9",
             "thumbUrl": "img/thumb-arros-covat-ep11.jpg",
             "posterUrl": "",
-            "featured": true,
             "visible": true,
             "relatedWorkIDs": [
                 "arros-covat-ep9",
                 "arros-covat-ep10",
                 "arros-covat-ep12"
-            ]
+            ],
+            "featured": true,
+            "featuredThumbTitle": "Arrós Covat",
+            "featuredThumbSubtitle": "TV Series"
         },
         {
             "id": "arros-covat-ep12",
@@ -280,7 +319,9 @@
             "subtitle": "Arròs de boda",
             "clientProject": "",
             "categoryText": "TV Series",
-            "category": "tv-series",
+            "categoryFilter": [
+                "film-and-tv-series"
+            ],
             "role": "Co-director",
             "description": "Produced by Escándalo Films and TV3",
             "festivals": [],
@@ -290,21 +331,25 @@
             "aspectRatio": "ratio-16-9",
             "thumbUrl": "img/thumb-arros-covat-ep12.jpg",
             "posterUrl": "",
-            "featured": false,
             "visible": true,
             "relatedWorkIDs": [
                 "arros-covat-ep9",
                 "arros-covat-ep10",
                 "arros-covat-ep11"
-            ]
+            ],
+            "featured": false,
+            "featuredThumbTitle": "",
+            "featuredThumbSubtitle": ""
         },
         {
             "id": "puzzled-love-fragment",
             "title": "Puzzled Love (fragment)",
             "subtitle": "13 months, 13 directors, 1 love story",
             "clientProject": "",
-            "categoryText": "Films",
-            "category": "films",
+            "categoryText": "Featured Film",
+            "categoryFilter": [
+                "film-and-tv-series"
+            ],
             "role": "Director & Writer of the fragment August II",
             "description": "Choral project produced by Escándalo Films, ESCAC, Canal+ and Tv3",
             "festivals": [
@@ -323,19 +368,23 @@
             "aspectRatio": "ratio-21-9",
             "thumbUrl": "img/thumb-puzzled-love-fragment.jpg",
             "posterUrl": "img/poster-puzzled-love.jpg",
-            "featured": true,
             "visible": true,
             "relatedWorkIDs": [
                 "puzzled-love"
-            ]
+            ],
+            "featured": true,
+            "featuredThumbTitle": "Puzzled Love",
+            "featuredThumbSubtitle": "Short film"
         },
         {
             "id": "puzzled-love",
             "title": "Puzzled Love",
             "subtitle": "13 months, 13 directors, 1 love story",
             "clientProject": "",
-            "categoryText": "Films",
-            "category": "films",
+            "categoryText": "Featured Film",
+            "categoryFilter": [
+                "film-and-tv-series"
+            ],
             "role": "Director & Writer of the fragment August II",
             "description": "Choral project produced by Escándalo Films, ESCAC, Canal+ and Tv3",
             "festivals": [
@@ -354,19 +403,24 @@
             "aspectRatio": "ratio-21-9",
             "thumbUrl": "img/thumb-puzzled-love.jpg",
             "posterUrl": "img/poster-puzzled-love.jpg",
-            "featured": false,
             "visible": true,
             "relatedWorkIDs": [
                 "puzzled-love-fragment"
-            ]
+            ],
+            "featured": false,
+            "featuredThumbTitle": "",
+            "featuredThumbSubtitle": ""
         },
         {
             "id": "the-true-story-of-the-magical-socks",
             "title": "The true story of the magical socks",
             "subtitle": "",
             "clientProject": "",
-            "categoryText": "Commercials",
-            "category": "commercials",
+            "categoryText": "Commercial",
+            "categoryFilter": [
+                "commercials",
+                "film-and-tv-series"
+            ],
             "role": "Director",
             "description": "clientProject: Apres",
             "festivals": [],
@@ -376,9 +430,11 @@
             "thumbUrl": "img/thumb-the-true-story-of-the-magical-socks.jpg",
             "aspectRatio": "ratio-21-9",
             "posterUrl": "",
-            "featured": true,
             "visible": true,
-            "relatedWorkIDs": []
+            "relatedWorkIDs": [],
+            "featured": true,
+            "featuredThumbTitle": "The true story of the magical socks",
+            "featuredThumbSubtitle": "ApAres"
         }
     ]
 }

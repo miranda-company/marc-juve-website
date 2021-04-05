@@ -20,7 +20,11 @@
     #end-indicator {
         border: $wire;
         width: 12px;
-        margin-bottom: 5rem;
+        margin-bottom: 2rem;
+    }
+
+    .end-indicator-star {
+        fill: $red;
     }
 
 }

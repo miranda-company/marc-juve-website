@@ -60,6 +60,8 @@ body {
 
 .margin-bottom { margin-bottom: 15rem; }
 .gutter { margin-bottom: 10rem; }
+.hide { display: none; }
+.show { display: block; }
 
 @media only screen and (max-width: $break-1) {
   .wrap { padding: 0 7rem; }

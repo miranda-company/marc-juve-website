@@ -72,7 +72,7 @@ var Home = {
         buildCards: function () {
             App.cons("Building featured work grid");
             for (let i = 0; i < Home.featuredWork.cardData.length; i++) {
-                var newCard = new Card(Home.featuredWork.grid, Home.featuredWork.cardData[i].id, "fw-card", Home.featuredWork.cardData[i].title, Home.featuredWork.cardData[i].subtitle, Home.featuredWork.cardData[i].category, Home.featuredWork.cardData[i].thumbUrl);
+                var newCard = new Card(Home.featuredWork.grid, Home.featuredWork.cardData[i].id, "fw-card", Home.featuredWork.cardData[i].featuredThumbTitle, Home.featuredWork.cardData[i].featuredThumbSubtitle, Home.featuredWork.cardData[i].categoryFilter, Home.featuredWork.cardData[i].thumbUrl);
                 newCard.build();
             }
 
@@ -88,6 +88,28 @@ var Home = {
 
         filterHandler: function (event) {
             App.cons("Filter btn clicked " + this.id);
+            let filter = this.id;
+
+            Home.featuredWork.cards.addClass("hide");
+            $(".filter-fw-btn").removeClass("selected");
+            $("#" + filter).addClass("selected");
+
+            if (filter == "all") {
+                Home.featuredWork.cards.removeClass("hide");
+            }
+
+            if (filter == "commercials") {
+                $("." + filter).removeClass("hide");
+            }
+
+            if (filter == "film-and-tv-series") {
+                $("." + filter).removeClass("hide");
+            }
+
+            if (filter == "music-videos") {
+                $("." + filter).removeClass("hide");
+            }
+
         },
 
         addFilterListeners: function () {
@@ -324,7 +346,7 @@ var Project = {
     buildCards: function () {
         App.cons("Building related work cards");
         for (let i = 0; i < Project.relatedWork.length; i++) {
-            var newCard = new Card(Project.rwGrid, Project.relatedWork[i][0].id, "related-work-card", Project.relatedWork[i][0].title, Project.relatedWork[i][0].subtitle, Project.relatedWork[i][0].category, Project.relatedWork[i][0].thumbUrl);
+            var newCard = new Card(Project.rwGrid, Project.relatedWork[i][0].id, "related-work-card", Project.relatedWork[i][0].title, Project.relatedWork[i][0].subtitle, Project.relatedWork[i][0].categoryFilter, Project.relatedWork[i][0].thumbUrl);
             newCard.build();
         }
 
@@ -445,7 +467,7 @@ var Project = {
                 end: "top 10%",
                 // markers: true
             },
-            duration: 0.8,
+            duration: 0.6,
             opacity: 1,
             y: 0
         });
@@ -473,8 +495,8 @@ var Project = {
                 end: "top 10%",
                 // markers: true
             },
-            delay: 1.6,
-            duration: 0.8,
+            delay: 1.2,
+            duration: 0.6,
             opacity: 1,
             onComplete: Project.closeHandler
         });
@@ -539,7 +561,10 @@ Card.prototype.build = function () {
     App.cons("Building card: " + this.id);
     let card = document.createElement("div");
     card.setAttribute("id", this.id);
-    card.className = "card " + this.class + " " + this.category;
+    card.className = "card " + this.class + " ";
+    for (let i = 0; i < this.category.length; i++) {
+        card.className += this.category[i] + " ";
+    }
     this.parentContainer.append(card);
 
     let cardContent = document.createElement("div");
