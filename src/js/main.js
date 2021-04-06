@@ -29,10 +29,14 @@ var App = {
 var Home = {
     mainContainer: $(".main-wrap"),
     isFrozen: false,
+    archiveVisible: true,
 
     init: function () {
         App.cons("Home initialized");
         this.featuredWork.init();
+        if (this.archiveVisible) {
+            this.archive.init();
+        }
         gsap.to("#page-overlay-1", { duration: App.transitionSpeed, autoAlpha: 0 });
         gsap.to("#page-overlay-2", { duration: App.transitionSpeed, opacity: 0 });
         gsap.to("#end-text", { duration: App.transitionSpeed, opacity: 0, y: 100 });
@@ -92,7 +96,7 @@ var Home = {
 
             Home.featuredWork.cards.addClass("hide");
             $(".filter-fw-btn").removeClass("selected");
-            $("#" + filter).addClass("selected");
+            $("#fw-filter-buttons").find("#" + filter).addClass("selected");
 
             if (filter == "all") {
                 Home.featuredWork.cards.removeClass("hide");
@@ -151,6 +155,121 @@ var Home = {
 
         cardHandler: function (event) {
             App.cons("FW card was clicked: " + this.id);
+            let projectId = this.id;
+            gsap.to("#page-overlay-1", {
+                duration: App.transitionSpeed, autoAlpha: 1, onComplete: function () {
+                    Home.freeze();
+                    Project.init(projectId);
+                }
+            });
+        }
+    },
+
+    archive: {
+        mainContainer: $("#js-archive"),
+        grid: $("#archive-grid"),
+        cardData: [],
+        cards: null,
+        filterBtns: null,
+
+        init: function () {
+            this.getData();
+            this.buildCards();
+            this.filterBtns = $(".filter-archive-btn");
+            this.addFilterListeners();
+        },
+
+        getData: function () {
+            // Search for projects to be featured
+            App.cons("Looking for work to be displayed in the archive");
+            let results = DynamicData.search("projects", "featured", false);
+
+            Home.archive.cardData = results;
+            App.cons("Found " + Home.archive.cardData.length + " projects to be featured");
+        },
+
+        buildCards: function () {
+            App.cons("Building featured work grid");
+            for (let i = 0; i < Home.archive.cardData.length; i++) {
+                var newCard = new Card(Home.archive.grid, Home.archive.cardData[i].id, "archive-card", Home.archive.cardData[i].title, Home.archive.cardData[i].subtitle, Home.archive.cardData[i].categoryFilter, Home.archive.cardData[i].thumbUrl);
+                newCard.build();
+            }
+
+            this.getCards();
+            this.addCardListeners();
+        },
+
+        getCards: function () {
+            Home.archive.cards = $(".archive-card");
+            gsap.set([".thumb-image"], { scale: 1 });
+            gsap.set([".card-overlay", ".card-title", ".card-subtitle"], { opacity: 0 });
+        },
+
+        filterHandler: function (event) {
+            App.cons("Filter btn clicked " + this.id);
+            let filter = this.id;
+
+            Home.archive.cards.addClass("hide");
+            $(".filter-archive-btn").removeClass("selected");
+            $("#archive-filter-buttons").find("#" + filter).addClass("selected");
+
+            if (filter == "all") {
+                Home.archive.cards.removeClass("hide");
+            }
+
+            if (filter == "commercials") {
+                $("." + filter).removeClass("hide");
+            }
+
+            if (filter == "film-and-tv-series") {
+                $("." + filter).removeClass("hide");
+            }
+
+            if (filter == "music-videos") {
+                $("." + filter).removeClass("hide");
+            }
+
+        },
+
+        addFilterListeners: function () {
+            App.cons("Adding events to filters");
+            $.each(Home.archive.filterBtns, function (i) {
+                $(this).on("click", Home.archive.filterHandler);
+            });
+        },
+
+        addCardListeners: function () {
+            App.cons("Adding event listeners to " + Home.archive.cardData.length + " featured work cards");
+            $.each(Home.archive.cards, function (i) {
+                $(this).on("click", Home.archive.cardHandler);
+                $(this).on("mouseenter", Home.archive.hoverHandler);
+                $(this).on("mouseleave", Home.archive.outHandler);
+            });
+        },
+
+        hoverHandler: function (event) {
+            let cardOverlay = $(this).find(".card-overlay");
+            let cardTitle = $(this).find(".card-title");
+            let cardSubtitle = $(this).find(".card-subtitle");
+            let thumbImage = $(this).find(".thumb-image");
+            gsap.set([cardOverlay, cardTitle, cardSubtitle], { autoAlpha: 0 });
+            gsap.to([cardOverlay], { duration: 0.4, autoAlpha: 1, ease: Power1.easeInOut, overwrite: true });
+            gsap.to([cardTitle, cardSubtitle], { duration: 0.8, autoAlpha: 1, ease: Power1.easeInOut, overwrite: true });
+            gsap.to([thumbImage], { duration: 0.4, scale: 1.02, overwrite: true });
+        },
+
+        outHandler: function (event) {
+            let cardOverlay = $(this).find(".card-overlay");
+            let cardTitle = $(this).find(".card-title");
+            let cardSubtitle = $(this).find(".card-subtitle");
+            let thumbImage = $(this).find(".thumb-image");
+
+            gsap.to([cardOverlay, cardTitle, cardSubtitle], { autoAlpha: 0, overwrite: true });
+            gsap.to([thumbImage], { scale: 1, overwrite: true });
+        },
+
+        cardHandler: function (event) {
+            App.cons("Archive card was clicked: " + this.id);
             let projectId = this.id;
             gsap.to("#page-overlay-1", {
                 duration: App.transitionSpeed, autoAlpha: 1, onComplete: function () {
@@ -259,6 +378,7 @@ var Project = {
             Project.videoSection.removeClass("display-none");
         } else {
             Project.videoSection.addClass("display-none");
+            Project.video.attr("src", "");
         }
 
         // Replace title info
@@ -267,14 +387,16 @@ var Project = {
             Project.title.removeClass("display-none");
         } else {
             Project.title.addClass("display-none");
+            Project.title.html("");
         }
 
-        // Replace sutitle info
+        // Replace subtitle info
         if (Project.data[0].subtitle) {
             Project.subtitle.text(Project.data[0].subtitle);
             Project.subtitle.removeClass("display-none");
         } else {
             Project.subtitle.addClass("display-none");
+            Project.subtitle.html("");
         }
 
         // Replace client/project info
@@ -283,13 +405,15 @@ var Project = {
             Project.clientProject.removeClass("display-none");
         } else {
             Project.clientProject.addClass("display-none");
+            Project.clientProject.html("");
         }
 
         // Replace category text info
-        if (Project.data[0].category) {
+        if (Project.data[0].categoryText) {
             Project.category.text(Project.data[0].categoryText);
         } else {
             Project.category.addClass("display-none");
+            Project.category.html("");
         }
 
         // Replace role info
@@ -298,6 +422,7 @@ var Project = {
             Project.role.removeClass("display-none");
         } else {
             Project.role.addClass("display-none");
+            Project.role.html("");
         }
 
         // Replace description info
@@ -306,6 +431,7 @@ var Project = {
             Project.description.removeClass("display-none");
         } else {
             Project.description.addClass("display-none");
+            Project.description.addClass("");
         }
 
         // Replace festivals info
@@ -332,6 +458,7 @@ var Project = {
             Project.posterSection.removeClass("display-none");
         } else {
             Project.posterSection.addClass("display-none");
+            Project.posterImage.attr("src", "");
         }
 
         // Replace press kit info
@@ -340,6 +467,7 @@ var Project = {
             Project.pressKitSection.removeClass("display-none");
         } else {
             Project.pressKitSection.addClass("display-none");
+            Project.pressKitAnchorTag.attr("src", "");
         }
     },
 

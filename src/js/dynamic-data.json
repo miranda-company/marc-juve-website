@@ -11,15 +11,15 @@
             "title": "L'amor descongela",
             "subtitle": "",
             "clientProject": "Casa Batlló",
-            "categoryText": "Commercial",
+            "categoryText": "",
             "categoryFilter": [
                 "commercials"
             ],
             "festivals": [],
             "press": [],
             "pressKitUrl": "",
-            "role": "Director",
-            "description": "Produced by Malditos Produce for Casa Batlló",
+            "role": "",
+            "description": "",
             "videoUrl": "https://player.vimeo.com/video/247135849",
             "aspectRatio": "ratio-21-9",
             "thumbUrl": "img/thumb-l-amor-descongela.jpg",
@@ -35,12 +35,12 @@
             "title": "Està nevant a la Casa Batlló",
             "subtitle": "",
             "clientProject": "Casa Batlló",
-            "categoryText": "Commercial",
+            "categoryText": "",
             "categoryFilter": [
                 "commercials"
             ],
-            "role": "Director",
-            "description": "Produced by Malditos Produce for Casa Batlló",
+            "role": "",
+            "description": "",
             "festivals": [],
             "press": [],
             "pressKitUrl": "",
@@ -59,11 +59,11 @@
             "title": "Si fuera por mi",
             "subtitle": "",
             "clientProject": "Pixel de Stael",
-            "categoryText": "Music videos",
+            "categoryText": "",
             "categoryFilter": [
                 "music-videos"
             ],
-            "role": "Director",
+            "role": "",
             "description": "",
             "festivals": [],
             "press": [],
@@ -84,13 +84,13 @@
         {
             "id": "el-mon-em-vol-connectar",
             "title": "El món em vol connectar",
-            "subtitle": "Pixel de Stael",
+            "subtitle": "",
             "clientProject": "Pixel de Stael",
-            "categoryText": "Music videos",
+            "categoryText": "",
             "categoryFilter": [
                 "music-videos"
             ],
-            "role": "Director",
+            "role": "",
             "description": "",
             "festivals": [],
             "press": [],
@@ -111,9 +111,9 @@
         {
             "id": "esperanca",
             "title": "Esperança",
-            "subtitle": "Pixel de Stael",
+            "subtitle": "",
             "clientProject": "Pixel de Stael",
-            "categoryText": "Music videos",
+            "categoryText": "",
             "categoryFilter": [
                 "music-videos"
             ],
@@ -144,7 +144,7 @@
             "categoryFilter": [
                 "film-and-tv-series"
             ],
-            "role": "Director",
+            "role": "Director & Writer",
             "description": "Produced by ESCAC Films in collaboration with The Berklee College of Music & La Fémis",
             "festivals": [
                 "Winner of the Special Mention at Nocturna International Film Festival of Madrid, SPAIN",
@@ -191,7 +191,7 @@
             "categoryFilter": [
                 "film-and-tv-series"
             ],
-            "role": "Director",
+            "role": "Director & Writer",
             "description": "Produced by ESCAC Films in collaboration with The Berklee College of Music & La Fémis",
             "festivals": [
                 "Winner of the Special Mention at Nocturna International Film Festival of Madrid, SPAIN",
