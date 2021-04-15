@@ -94,16 +94,6 @@ button {
 ::selection {
   background: #e1e1e1; }
 
-@media only screen and (max-width: 1024px) {
-  p, ul {
-    font-size: 3rem;
-    line-height: 4rem; } }
-
-@media only screen and (max-width: 720px) {
-  p, ul {
-    font-size: 2.5rem;
-    line-height: 3.5rem; } }
-
 /*
 */
 * {
@@ -116,7 +106,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #ecebec; }
+  background-color: #ffffff; }
 
 .wrap {
   border: 0px solid cyan;
@@ -132,7 +122,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #ecebec;
+  background-color: #ffffff;
   z-index: 99;
   pointer-events: none; }
 
@@ -198,7 +188,7 @@ body {
   position: fixed;
   width: 100%;
   height: 5rem;
-  background-color: #ecebec;
+  background-color: #ffffff;
   z-index: 1;
   display: none; }
   .menu .wrap {
@@ -240,7 +230,7 @@ body {
 .hero-video {
   border: 0px solid cyan;
   overflow: hidden;
-  background-color: #ecebec; }
+  background-color: #ffffff; }
   .hero-video video {
     width: 100%;
     height: auto; }

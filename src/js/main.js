@@ -30,6 +30,7 @@ var Home = {
     mainContainer: $(".main-wrap"),
     isFrozen: false,
     archiveVisible: true,
+    heroVideo: null,
 
     init: function () {
         App.cons("Home initialized");
@@ -40,6 +41,18 @@ var Home = {
         gsap.to("#page-overlay-1", { duration: App.transitionSpeed, autoAlpha: 0 });
         gsap.to("#page-overlay-2", { duration: App.transitionSpeed, opacity: 0 });
         gsap.to("#end-text", { duration: App.transitionSpeed, opacity: 0, y: 100 });
+
+        // // Get hero video
+        // var vidContainer = document.querySelector("vimeo-hero-video");
+        // var player = new Vimeo.Player(vidContainer);
+
+        // player.on('play', function () {
+        //     console.log('--------------------------------------played the video!');
+        // });
+
+        // player.getVideoTitle().then(function (title) {
+        //     console.log('--------------------------------------title:', title);
+        // });
     },
 
     freeze: function () {
@@ -333,6 +346,23 @@ var Project = {
         this.rwGrid = $(".related-work-grid");
         this.endSection = $("#project-end-section");
 
+        // Create vimeo dynamic video
+        var options = {
+            id: 247135849,
+            width: 640,
+            loop: true
+        };
+
+        var player = new Vimeo.Player('made-in-ny', options);
+
+        player.setVolume(10);
+
+        player.on('play', function () {
+            console.log('played the video!');
+        });
+        //-
+
+
         this.getData();
         this.setData();
 
@@ -611,7 +641,7 @@ var Project = {
             },
             delay: 0.6,
             duration: 0.8,
-            rotation: 360
+            rotation: 0
         });
 
         gsap.to("#page-overlay-2", {

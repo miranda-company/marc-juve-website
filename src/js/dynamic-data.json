@@ -137,7 +137,7 @@
         },
         {
             "id": "happy-face-trailer",
-            "title": "Happy Face (Trailer)",
+            "title": "Happy Face",
             "subtitle": "A love letter to Steven Spielberg",
             "clientProject": "",
             "categoryText": "Short Film",
@@ -219,7 +219,7 @@
             "pressKitUrl": "https://www.google.com",
             "videoUrl": "https://player.vimeo.com/video/98266524",
             "aspectRatio": "ratio-21-9",
-            "thumbUrl": "img/thumb-happy-face.jpg",
+            "thumbUrl": "img/thumb-happy-face.png",
             "posterUrl": "img/poster-happy-face.jpg",
             "visible": true,
             "relatedWorkIDs": [
@@ -343,7 +343,7 @@
         },
         {
             "id": "puzzled-love-fragment",
-            "title": "Puzzled Love (fragment)",
+            "title": "Puzzled Love",
             "subtitle": "13 months, 13 directors, 1 love story",
             "clientProject": "",
             "categoryText": "Featured Film",
@@ -374,7 +374,7 @@
             ],
             "featured": true,
             "featuredThumbTitle": "Puzzled Love",
-            "featuredThumbSubtitle": "Short film"
+            "featuredThumbSubtitle": "Featured film"
         },
         {
             "id": "puzzled-love",
@@ -401,7 +401,7 @@
             "pressKitUrl": "",
             "videoUrl": "https://player.vimeo.com/video/66295432",
             "aspectRatio": "ratio-21-9",
-            "thumbUrl": "img/thumb-puzzled-love.jpg",
+            "thumbUrl": "img/thumb-puzzled-love.png",
             "posterUrl": "img/poster-puzzled-love.jpg",
             "visible": true,
             "relatedWorkIDs": [
