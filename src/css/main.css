@@ -535,6 +535,37 @@ body {
   .project-hero-video .ratio-16-9 {
     position: relative;
     padding: 56.25% 0 0 0; }
+  .project-hero-video .video-poster-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 1;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */ }
+  .project-hero-video .video-poster-container img {
+    width: 100%;
+    height: auto; }
+  .project-hero-video .video-play-btn {
+    border: 0px solid cyan;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    cursor: pointer; }
+  .project-hero-video .video-play-btn h1 {
+    font-size: 7.5rem;
+    color: #ffffff; }
 
 /*
 */

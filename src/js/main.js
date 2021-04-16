@@ -347,19 +347,19 @@ var Project = {
         this.endSection = $("#project-end-section");
 
         // Create vimeo dynamic video
-        var options = {
-            id: 247135849,
-            width: 640,
-            loop: true
-        };
+        // var options = {
+        //     id: 247135849,
+        //     width: 640,
+        //     loop: true
+        // };
 
-        var player = new Vimeo.Player('made-in-ny', options);
+        // var player = new Vimeo.Player('made-in-ny', options);
 
-        player.setVolume(10);
+        // player.setVolume(10);
 
-        player.on('play', function () {
-            console.log('played the video!');
-        });
+        // player.on('play', function () {
+        //     console.log('played the video!');
+        // });
         //-
 
 
