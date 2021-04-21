@@ -303,6 +303,7 @@ var Project = {
     videoWrapper: null,
     vimeoPlayer: null,
     videoPosterContainer: null,
+    videoPosterImage: null,
     videoPlayBtn: null,
     title: null,
     subtitle: null,
@@ -332,6 +333,7 @@ var Project = {
         this.videoSection = $(".project-hero-video");
         this.videoWrapper = $(".video-wrapper");
         this.videoPosterContainer = $("#video-poster-container");
+        this.videoPosterImage = $("#video-poster-image");
         this.videoPlayBtn = $("#video-play-btn");
         this.title = $(".project-title");
         this.subtitle = $(".project-subtitle");
@@ -349,28 +351,11 @@ var Project = {
         this.rwGrid = $(".related-work-grid");
         this.endSection = $("#project-end-section");
 
-        // Create vimeo dynamic video
-        // var options = {
-        //     id: 247135849,
-        //     width: 640,
-        //     loop: true
-        // };
-
-        // var player = new Vimeo.Player('made-in-ny', options);
-
-        // player.setVolume(10);
-
-        // player.on('play', function () {
-        //     console.log('played the video!');
-        // });
-        //-
-
-
         this.getData();
         this.setData();
 
+        // Add event listener to play button
         this.videoPlayBtn.on("click", Project.playVideo);
-
 
         // Check if project has related work and get data
         if (Project.data[0].relatedWorkIDs.length > 0) {
@@ -413,30 +398,13 @@ var Project = {
         App.cons("Page info has been changed");
 
         // Replace video info
-
-        // Create vimeo dynamic video
-        // var options = {
-        //     id: 247135849,
-        //     width: 640,
-        //     loop: true
-        // };
-
-        // var player = new Vimeo.Player('made-in-ny', options);
-
-        // player.setVolume(10);
-
-        // player.on('play', function () {
-        //     console.log('played the video!');
-        // });
-        //-
-
         if (Project.data[0].vimeoID) {
             let vimeoOptions = {
                 id: Project.data[0].vimeoID,
-                // width: "100%",
-                // height: "100%",
                 loop: false,
                 autoPlay: false,
+                windth: "",
+                height: ""
             }
 
             // let vimeoPlayer = new Vimeo.Player("js-vimeo-player", vimeoOptions);
@@ -451,6 +419,15 @@ var Project = {
             Project.videoSection.removeClass("display-none");
         } else {
             Project.videoSection.addClass("display-none");
+        }
+
+        // Replace video poster
+        if (Project.data[0].videoPosterUrl) {
+            Project.videoPosterImage.attr("src", Project.data[0].videoPosterUrl);
+            Project.videoPosterImage.removeClass("display-none");
+        } else {
+            Project.videoPosterImage.addClass("display-none");
+            Project.videoPosterImage.attr("src", "");
         }
 
         // Replace title info
