@@ -6,9 +6,11 @@
     overflow: hidden;
     background-color: #111111;
 
-    .project-video {
-        width: 100%;
-        height: auto;
+    #js-vimeo-player iframe {
+        position: relative;
+        width: 100% !important;
+        height: auto !important;
+        border: 1px solid red;
     }
 
     .ratio-21-9{
@@ -51,7 +53,7 @@
         cursor: pointer;
     }   
         .video-play-btn h1 {
-            font-size: 7.5rem;
+            font-size: 6rem;
             color: #ffffff;
         }
 }

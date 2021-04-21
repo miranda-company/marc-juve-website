@@ -301,7 +301,9 @@ var Project = {
     mainContainer: $(".project-wrap"),
     videoSection: null,
     videoWrapper: null,
-    video: null,
+    vimeoPlayer: null,
+    videoPosterContainer: null,
+    videoPlayBtn: null,
     title: null,
     subtitle: null,
     clientProject: null,
@@ -329,7 +331,8 @@ var Project = {
 
         this.videoSection = $(".project-hero-video");
         this.videoWrapper = $(".video-wrapper");
-        this.video = $(".project-video");
+        this.videoPosterContainer = $("#video-poster-container");
+        this.videoPlayBtn = $("#video-play-btn");
         this.title = $(".project-title");
         this.subtitle = $(".project-subtitle");
         this.clientProject = $(".project-client");
@@ -366,7 +369,10 @@ var Project = {
         this.getData();
         this.setData();
 
-        // Checks if project has related work and get data
+        this.videoPlayBtn.on("click", Project.playVideo);
+
+
+        // Check if project has related work and get data
         if (Project.data[0].relatedWorkIDs.length > 0) {
             App.cons("Looking for " + Project.data[0].relatedWorkIDs.length + " related works");
 
@@ -382,6 +388,13 @@ var Project = {
         // Force window resize before adding the ScrollTriggers. This calculates the position of project-end-section
         App.forceResize();
         this.addScrollTriggers();
+    },
+
+    playVideo: function () {
+        App.cons("Playing project's video");
+
+        Project.videoPosterContainer.addClass("display-none");
+        Project.vimeoPlayer.play();
     },
 
     getData: function () {
@@ -400,15 +413,44 @@ var Project = {
         App.cons("Page info has been changed");
 
         // Replace video info
-        if (Project.data[0].videoUrl) {
-            let videoSrc = Project.data[0].videoUrl;
-            let vimeoOptions = "?autoplay=1&color=bb0207&title=0&byline=0&portrait=0";
-            Project.video.attr("src", videoSrc + vimeoOptions);
+
+        // Create vimeo dynamic video
+        // var options = {
+        //     id: 247135849,
+        //     width: 640,
+        //     loop: true
+        // };
+
+        // var player = new Vimeo.Player('made-in-ny', options);
+
+        // player.setVolume(10);
+
+        // player.on('play', function () {
+        //     console.log('played the video!');
+        // });
+        //-
+
+        if (Project.data[0].vimeoID) {
+            let vimeoOptions = {
+                id: Project.data[0].vimeoID,
+                // width: "100%",
+                // height: "100%",
+                loop: false,
+                autoPlay: false,
+            }
+
+            // let vimeoPlayer = new Vimeo.Player("js-vimeo-player", vimeoOptions);
+            Project.vimeoPlayer = new Vimeo.Player("js-vimeo-player", vimeoOptions);
+
+            // vimeoPlayer.play();
+            Project.vimeoPlayer.on("play", function () {
+                App.cons("Project video is playing");
+            });
+
             Project.videoWrapper.addClass(Project.data[0].aspectRatio);
             Project.videoSection.removeClass("display-none");
         } else {
             Project.videoSection.addClass("display-none");
-            Project.video.attr("src", "");
         }
 
         // Replace title info
@@ -574,7 +616,6 @@ var Project = {
     reset: function () {
         Project.closeBtn.off("click", this.closeHandler);
         Project.videoWrapper.removeClass(Project.data[0]["aspectRatio"]);
-        Project.video.attr("src", "");
         Project.relatedWork = [];
         $(".related-work-card").remove();
         $(".festival").remove();
@@ -583,6 +624,15 @@ var Project = {
         Project.endSectionPos = null;
         ScrollTrigger.getById("pinCloseBtn").kill(true);
         ScrollTrigger.getById("projectEnd").kill(true);
+
+        Project.videoPosterContainer.removeClass("display-none");
+
+        // Remove vimeo player
+        Project.vimeoPlayer.destroy().then(function () {
+            // the player was destroyed
+        }).catch(function (error) {
+            // an error occurred
+        });
     },
 
     closeHandler: function (event) {

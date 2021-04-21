@@ -525,9 +525,11 @@ body {
   border: 0px solid cyan;
   overflow: hidden;
   background-color: #111111; }
-  .project-hero-video .project-video {
-    width: 100%;
-    height: auto; }
+  .project-hero-video #js-vimeo-player iframe {
+    position: relative;
+    width: 100% !important;
+    height: auto !important;
+    border: 1px solid red; }
   .project-hero-video .ratio-21-9 {
     position: relative;
     padding: 42.8571% 0 0 0;
@@ -564,7 +566,7 @@ body {
             transform: translate(-50%, -50%);
     cursor: pointer; }
   .project-hero-video .video-play-btn h1 {
-    font-size: 7.5rem;
+    font-size: 6rem;
     color: #ffffff; }
 
 /*
