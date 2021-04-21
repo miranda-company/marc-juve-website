@@ -41,18 +41,6 @@ var Home = {
         gsap.to("#page-overlay-1", { duration: App.transitionSpeed, autoAlpha: 0 });
         gsap.to("#page-overlay-2", { duration: App.transitionSpeed, opacity: 0 });
         gsap.to("#end-text", { duration: App.transitionSpeed, opacity: 0, y: 100 });
-
-        // // Get hero video
-        // var vidContainer = document.querySelector("vimeo-hero-video");
-        // var player = new Vimeo.Player(vidContainer);
-
-        // player.on('play', function () {
-        //     console.log('--------------------------------------played the video!');
-        // });
-
-        // player.getVideoTitle().then(function (title) {
-        //     console.log('--------------------------------------title:', title);
-        // });
     },
 
     freeze: function () {
@@ -61,6 +49,7 @@ var Home = {
 
     unfreeze: function () {
         Home.mainContainer.removeClass("freeze display-none");
+        gsap.set([".card-title", ".card-subtitle"], { css: { color: "#000000" } });
     },
 
     featuredWork: {
@@ -101,6 +90,7 @@ var Home = {
             Home.featuredWork.cards = $(".fw-card");
             gsap.set([".thumb-image"], { scale: 1 });
             gsap.set([".card-overlay", ".card-title", ".card-subtitle"], { opacity: 0 });
+            gsap.set([".card-title", ".card-subtitle"], { css: { color: "#000000" } });
         },
 
         filterHandler: function (event) {
@@ -533,7 +523,8 @@ var Project = {
 
     getCards: function () {
         Project.rwCards = $(".related-work-card");
-        gsap.set([".card-overlay", ".card-title", ".card-subtitle"], { autoAlpha: 0 });
+        gsap.set([".card-overlay"], { autoAlpha: 0 });
+        gsap.set([".card-title", ".card-subtitle"], { css: { color: "#ffffff" } });
     },
 
     addCardListeners: function () {
@@ -550,9 +541,9 @@ var Project = {
         let cardTitle = $(this).find(".card-title");
         let cardSubtitle = $(this).find(".card-subtitle");
         let thumbImage = $(this).find(".thumb-image");
-        gsap.set([cardOverlay, cardTitle, cardSubtitle], { autoAlpha: 0 });
+        gsap.set([cardOverlay], { autoAlpha: 0 });
         gsap.to([cardOverlay], { duration: 0.4, autoAlpha: 1, ease: Power1.easeInOut });
-        gsap.to([cardTitle, cardSubtitle], { delay: 0.2, duration: 0.8, autoAlpha: 1, ease: Power1.easeInOut });
+        gsap.to([cardTitle, cardSubtitle], { delay: 0.2, duration: 0.8, css: { color: "#000000" }, ease: Power1.easeInOut });
         gsap.to([thumbImage], { duration: 0.4, scale: 1.02 });
     },
 
@@ -561,7 +552,8 @@ var Project = {
         let cardTitle = $(this).find(".card-title");
         let cardSubtitle = $(this).find(".card-subtitle");
         let thumbImage = $(this).find(".thumb-image");
-        gsap.to([cardOverlay, cardTitle, cardSubtitle], { autoAlpha: 0, overwrite: true });
+        gsap.to([cardOverlay], { autoAlpha: 0, overwrite: true });
+        gsap.to([cardTitle, cardSubtitle], { css: { color: "#ffffff" } });
         gsap.to([thumbImage], { scale: 1, overwrite: true });
     },
 
