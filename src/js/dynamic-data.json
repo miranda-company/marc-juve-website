@@ -28,8 +28,10 @@
             "visible": true,
             "relatedWorkIDs": [],
             "featured": true,
-            "featuredThumbTitle": "L'amor descongela",
-            "featuredThumbSubtitle": "Casa Batlló"
+            "homeThumbTitle": "L'amor descongela",
+            "homeThumbSubtitle": "Casa Batlló",
+            "projectViewThumbTitle": "L'amor descongela",
+            "projectViewThumbSubtitle": "Casa Batlló"
         },
         {
             "id": "esta-nevant-a-la-casa-batllo",
@@ -53,8 +55,10 @@
             "visible": true,
             "relatedWorkIDs": [],
             "featured": true,
-            "featuredThumbTitle": "Està nevant a la Casa Batlló",
-            "featuredThumbSubtitle": "Casa Batlló"
+            "homeThumbTitle": "Està nevant a la Casa Batlló",
+            "homeThumbSubtitle": "Casa Batlló",
+            "projectViewThumbTitle": "Està nevant a la Casa Batlló",
+            "projectViewThumbSubtitle": "Casa Batlló"
         },
         {
             "id": "si-fuera-por-mi",
@@ -81,8 +85,10 @@
                 "esperanca"
             ],
             "featured": true,
-            "featuredThumbTitle": "Si fuera por mi",
-            "featuredThumbSubtitle": "Pixel de Stael"
+            "homeThumbTitle": "Si fuera por mi",
+            "homeThumbSubtitle": "Pixel de Stael",
+            "projectViewThumbTitle": "Si fuera por mi",
+            "projectViewThumbSubtitle": "Pixel de Stael"
         },
         {
             "id": "el-mon-em-vol-connectar",
@@ -109,8 +115,10 @@
                 "esperanca"
             ],
             "featured": false,
-            "featuredThumbTitle": "",
-            "featuredThumbSubtitle": ""
+            "homeThumbTitle": "El món em vol connectar",
+            "homeThumbSubtitle": "Pixel de Stael",
+            "projectViewThumbTitle": "El món em vol connectar",
+            "projectViewThumbSubtitle": "Pixel de Stael"
         },
         {
             "id": "esperanca",
@@ -137,8 +145,10 @@
                 "el-mon-em-vol-connectar"
             ],
             "featured": false,
-            "featuredThumbTitle": "",
-            "featuredThumbSubtitle": ""
+            "homeThumbTitle": "Esperança",
+            "homeThumbSubtitle": "Pixel de Stael",
+            "projectViewThumbTitle": "Esperança",
+            "projectViewThumbSubtitle": "Pixel de Stael"
         },
         {
             "id": "happy-face-trailer",
@@ -185,8 +195,10 @@
                 "happy-face"
             ],
             "featured": true,
-            "featuredThumbTitle": "Happy Face",
-            "featuredThumbSubtitle": "Short Film"
+            "homeThumbTitle": "Happy Face",
+            "homeThumbSubtitle": "Short Film",
+            "projectViewThumbTitle": "Happy Face",
+            "projectViewThumbSubtitle": "Trailer"
         },
         {
             "id": "happy-face",
@@ -233,8 +245,10 @@
                 "happy-face-trailer"
             ],
             "featured": false,
-            "featuredThumbTitle": "",
-            "featuredThumbSubtitle": ""
+            "homeThumbTitle": "Happy Face",
+            "homeThumbSubtitle": "Short Film",
+            "projectViewThumbTitle": "Happy Face",
+            "projectViewThumbSubtitle": "Film"
         },
         {
             "id": "arros-covat-ep9",
@@ -262,8 +276,10 @@
                 "arros-covat-ep12"
             ],
             "featured": false,
-            "featuredThumbTitle": "",
-            "featuredThumbSubtitle": ""
+            "homeThumbTitle": "",
+            "homeThumbSubtitle": "",
+            "projectViewThumbTitle": "",
+            "projectViewThumbSubtitle": ""
         },
         {
             "id": "arros-covat-ep10",
@@ -291,8 +307,10 @@
                 "arros-covat-ep12"
             ],
             "featured": false,
-            "featuredThumbTitle": "",
-            "featuredThumbSubtitle": ""
+            "homeThumbTitle": "",
+            "homeThumbSubtitle": "",
+            "projectViewThumbTitle": "",
+            "projectViewThumbSubtitle": ""
         },
         {
             "id": "arros-covat-ep11",
@@ -320,8 +338,10 @@
                 "arros-covat-ep12"
             ],
             "featured": true,
-            "featuredThumbTitle": "Arrós Covat",
-            "featuredThumbSubtitle": "TV Series"
+            "homeThumbTitle": "Arrós Covat",
+            "homeThumbSubtitle": "TV Series",
+            "projectViewThumbTitle": "",
+            "projectViewThumbSubtitle": ""
         },
         {
             "id": "arros-covat-ep12",
@@ -349,8 +369,10 @@
                 "arros-covat-ep11"
             ],
             "featured": false,
-            "featuredThumbTitle": "",
-            "featuredThumbSubtitle": ""
+            "homeThumbTitle": "",
+            "homeThumbSubtitle": "",
+            "projectViewThumbTitle": "",
+            "projectViewThumbSubtitle": ""
         },
         {
             "id": "puzzled-love-fragment",
@@ -385,8 +407,10 @@
                 "puzzled-love"
             ],
             "featured": true,
-            "featuredThumbTitle": "Puzzled Love",
-            "featuredThumbSubtitle": "Featured film"
+            "homeThumbTitle": "Puzzled Love",
+            "homeThumbSubtitle": "Featured film",
+            "projectViewThumbTitle": "Puzzled Love",
+            "projectViewThumbSubtitle": "Trailer"
         },
         {
             "id": "puzzled-love",
@@ -421,8 +445,10 @@
                 "puzzled-love-fragment"
             ],
             "featured": false,
-            "featuredThumbTitle": "",
-            "featuredThumbSubtitle": ""
+            "homeThumbTitle": "",
+            "homeThumbSubtitle": "",
+            "projectViewThumbTitle": "Puzzled Love",
+            "projectViewThumbSubtitle": "Film"
         },
         {
             "id": "the-true-story-of-the-magical-socks",
@@ -447,8 +473,10 @@
             "visible": true,
             "relatedWorkIDs": [],
             "featured": true,
-            "featuredThumbTitle": "The true story of the magical socks",
-            "featuredThumbSubtitle": "ApAres"
+            "homeThumbTitle": "The true story of the magical socks",
+            "homeThumbSubtitle": "ApAres",
+            "projectViewThumbTitle": "The true story of the magical socks",
+            "projectViewThumbSubtitle": "ApAres"
         }
     ]
 }

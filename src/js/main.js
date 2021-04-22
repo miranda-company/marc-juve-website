@@ -78,7 +78,7 @@ var Home = {
         buildCards: function () {
             App.cons("Building featured work grid");
             for (let i = 0; i < Home.featuredWork.cardData.length; i++) {
-                var newCard = new Card(Home.featuredWork.grid, Home.featuredWork.cardData[i].id, "fw-card", Home.featuredWork.cardData[i].featuredThumbTitle, Home.featuredWork.cardData[i].featuredThumbSubtitle, Home.featuredWork.cardData[i].categoryFilter, Home.featuredWork.cardData[i].thumbUrl);
+                var newCard = new Card(Home.featuredWork.grid, Home.featuredWork.cardData[i].id, "fw-card", Home.featuredWork.cardData[i].homeThumbTitle, Home.featuredWork.cardData[i].homeThumbSubtitle, Home.featuredWork.cardData[i].categoryFilter, Home.featuredWork.cardData[i].thumbUrl);
                 newCard.build();
             }
 
@@ -194,7 +194,7 @@ var Home = {
         buildCards: function () {
             App.cons("Building featured work grid");
             for (let i = 0; i < Home.archive.cardData.length; i++) {
-                var newCard = new Card(Home.archive.grid, Home.archive.cardData[i].id, "archive-card", Home.archive.cardData[i].title, Home.archive.cardData[i].subtitle, Home.archive.cardData[i].categoryFilter, Home.archive.cardData[i].thumbUrl);
+                var newCard = new Card(Home.archive.grid, Home.archive.cardData[i].id, "archive-card", Home.archive.cardData[i].projectViewThumbTitle, Home.archive.cardData[i].projectViewThumbSubtitle, Home.archive.cardData[i].categoryFilter, Home.archive.cardData[i].thumbUrl);
                 newCard.build();
             }
 
@@ -397,10 +397,8 @@ var Project = {
                 height: ""
             }
 
-            // let vimeoPlayer = new Vimeo.Player("js-vimeo-player", vimeoOptions);
             Project.vimeoPlayer = new Vimeo.Player("js-vimeo-player", vimeoOptions);
 
-            // vimeoPlayer.play();
             Project.vimeoPlayer.on("play", function () {
                 App.cons("Project video is playing");
             });
@@ -515,7 +513,7 @@ var Project = {
     buildCards: function () {
         App.cons("Building related work cards");
         for (let i = 0; i < Project.relatedWork.length; i++) {
-            var newCard = new Card(Project.rwGrid, Project.relatedWork[i][0].id, "related-work-card", Project.relatedWork[i][0].title, Project.relatedWork[i][0].subtitle, Project.relatedWork[i][0].categoryFilter, Project.relatedWork[i][0].thumbUrl);
+            var newCard = new Card(Project.rwGrid, Project.relatedWork[i][0].id, "related-work-card", Project.relatedWork[i][0].projectViewThumbTitle, Project.relatedWork[i][0].projectViewThumbSubtitle, Project.relatedWork[i][0].categoryFilter, Project.relatedWork[i][0].thumbUrl);
             newCard.build();
         }
 
