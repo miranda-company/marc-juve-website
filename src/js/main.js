@@ -466,11 +466,13 @@ var Project = {
 
         // Replace description info
         if (Project.data[0].description) {
-            Project.description.text(Project.data[0].description);
+            let pDescString = String(Project.data[0].description);
+            let pDesc = pDescString.replace(/(?:\r\n|\r|\n)/g, "<br>");
+
+            Project.description.html(pDesc);
             Project.description.removeClass("display-none");
         } else {
             Project.description.addClass("display-none");
-            Project.description.addClass("");
         }
 
         // Replace festivals info
@@ -553,7 +555,7 @@ var Project = {
         let cardSubtitle = $(this).find(".card-subtitle");
         let thumbImage = $(this).find(".thumb-image");
         gsap.to([cardOverlay], { autoAlpha: 0, overwrite: true });
-        gsap.to([cardTitle, cardSubtitle], { css: { color: "#ffffff" } });
+        gsap.to([cardTitle, cardSubtitle], { css: { color: "#ffffff" }, overwrite: true });
         gsap.to([thumbImage], { scale: 1, overwrite: true });
     },
 
@@ -595,6 +597,7 @@ var Project = {
         ScrollTrigger.getById("projectEnd").kill(true);
 
         Project.videoPosterContainer.removeClass("display-none");
+        Project.videoPosterImage.attr("src", "");
 
         // Remove vimeo player
         Project.vimeoPlayer.destroy().then(function () {
@@ -682,6 +685,7 @@ var Project = {
 
 var DynamicData = {
     data: null,
+    images: [],
 
     init: function () {
         this.get();
@@ -689,19 +693,21 @@ var DynamicData = {
 
     get: function () {
         // Dynamic data on local machine
-        let requestURL = 'http://localhost:3000/js/dynamic-data.json';
+        let requestURL = "http://localhost:3000/js/dynamic-data.json";
 
         //Dynamic data live server
-        // let requestURL = 'https://www.labaula.net/terrenodepruebas/crisantemo/js/dynamic-data.json';
+        // let requestURL = "https://www.labaula.net/terrenodepruebas/crisantemo/js/dynamic-data.json";
 
         let request = new XMLHttpRequest();
-        request.open('GET', requestURL);
-        request.responseType = 'json';
+        request.open("GET", requestURL);
+        request.responseType = "json";
         request.send();
 
         request.onload = function () {
             App.cons("Dynamic data was loaded correctly");
             DynamicData.data = request.response;
+            DynamicData.getImages();
+            DynamicData.preloadImages(DynamicData.images);
             App.init();
         }
     },
@@ -721,6 +727,22 @@ var DynamicData = {
 
         // Return array of results
         return results;
+    },
+
+    getImages: function () {
+        for (let i = 0; i < DynamicData.data["projects"].length; i++) {
+            DynamicData.images.push(DynamicData.data["projects"][i].videoPosterUrl);
+        }
+    },
+
+    preloadImages: function () {
+        App.cons("Preloading " + DynamicData.images.length + " images");
+
+        let images = [];
+        for (var i = 0; i < DynamicData.images.length; i++) {
+            images[i] = new Image();
+            images[i].src = DynamicData.images[i];
+        }
     }
 }
 
