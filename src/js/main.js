@@ -337,6 +337,8 @@ var Project = {
         this.posterImage = $(".poster-image");
         this.pressKitSection = $(".project-press-kit");
         this.pressKitAnchorTag = $(".press-kit-anchor-tag");
+        this.pressSection = $(".project-press");
+        this.press = $(".press");
         this.rwSection = $(".project-related");
         this.rwGrid = $(".related-work-grid");
         this.endSection = $("#project-end-section");
@@ -385,7 +387,7 @@ var Project = {
     },
 
     setData: function () {
-        App.cons("Page info has been changed");
+        App.cons("Setting page dynamic data");
 
         // Replace video info
         if (Project.data[0].vimeoID) {
@@ -507,6 +509,29 @@ var Project = {
         } else {
             Project.pressKitSection.addClass("display-none");
             Project.pressKitAnchorTag.attr("src", "");
+        }
+
+        // Replace press info
+        if (Project.data[0].press.length) {
+            for (var i = 0; i < Project.data[0].press.length; i++) {
+                App.cons("Building press list");
+                let ul = document.createElement("ul");
+                Project.press.append(ul);
+
+                let li = document.createElement("li");
+                li.className = "press-link";
+                ul.append(li);
+
+                let a = document.createElement("a");
+                a.setAttribute("href", Project.data[0].press[i].linkUrl);
+                a.setAttribute("target", "_blank");
+                a.innerHTML = Project.data[0].press[i].linkTitle;
+                li.append(a);
+            }
+
+            Project.pressSection.removeClass("display-none");
+        } else {
+            Project.pressSection.addClass("display-none");
         }
     },
 

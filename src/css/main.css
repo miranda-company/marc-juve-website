@@ -717,6 +717,23 @@ body {
 
 /*
 */
+.project-press {
+  border: 0px solid cyan; }
+  .project-press h3 {
+    margin-bottom: 4rem; }
+  .project-press h3, .project-press ul {
+    text-align: center; }
+  .project-press .press-link a {
+    font-size: 1.66rem;
+    line-height: 3rem;
+    word-break: break-word;
+    font-family: "Garamond", serif;
+    text-decoration: none; }
+  .project-press .press-link a:hover {
+    text-decoration: underline; }
+
+/*
+*/
 .project-end {
   display: -webkit-box;
   display: -ms-flexbox;

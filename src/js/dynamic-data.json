@@ -395,7 +395,28 @@
                 "Official Selection Abycine, SPAIN",
                 "Official Selection MOST festival, SPAIN"
             ],
-            "press": [],
+            "press": [
+                {
+                    "linkTitle": "EL PAÍS. Puzzled Love: la sorpresa del amor estudiantil",
+                    "linkUrl": "https://elpais.com/cultura/2011/09/20/actualidad/1316469604_850215.html"
+                },
+                {
+                    "linkTitle": "EL PAÍS. En las aulas de un nuevo cine",
+                    "linkUrl": "https://elpais.com/diario/2011/08/30/revistaverano/1314655201_850215.html"
+                },
+                {
+                    "linkTitle": "LA VANGUARDIA. Un proyecto de fin de curso de la Escac viajará al festival de San Sebastián",
+                    "linkUrl": "https://www.lavanguardia.com/cine/20110904/54211813257/un-proyecto-de-fin-de-curso-de-la-escac-viajara-al-festival-de-san-sebastian.html"
+                },
+                {
+                    "linkTitle": "LA VANGUARDIA. 'El estudiante' y 'Puzzled Love': juventud en marcha",
+                    "linkUrl": "https://www.lavanguardia.com/cultura/20120503/54288803910/estudiante-puzzled-love-juventud-en-marcha.html"
+                },
+                {
+                    "linkTitle": "El PERIÓDICO. La cantera de la ESCAC brilla con su trabajo de fin de curso",
+                    "linkUrl": "https://www.elperiodico.com/es/ocio-y-cultura/20110921/cantera-escac-brilla-trabajo-curso-1156427"
+                }
+            ],
             "pressKitUrl": "",
             "vimeoID": 66295432,
             "aspectRatio": "ratio-21-9",
@@ -433,7 +454,28 @@
                 "Official Selection Abycine, SPAIN",
                 "Official Selection MOST festival, SPAIN"
             ],
-            "press": [],
+            "press": [
+                {
+                    "linkTitle": "EL PAÍS. Puzzled Love: la sorpresa del amor estudiantil",
+                    "linkUrl": "https://elpais.com/cultura/2011/09/20/actualidad/1316469604_850215.html"
+                },
+                {
+                    "linkTitle": "EL PAÍS. En las aulas de un nuevo cine",
+                    "linkUrl": "https://elpais.com/diario/2011/08/30/revistaverano/1314655201_850215.html"
+                },
+                {
+                    "linkTitle": "LA VANGUARDIA. Un proyecto de fin de curso de la Escac viajará al festival de San Sebastián",
+                    "linkUrl": "https://www.lavanguardia.com/cine/20110904/54211813257/un-proyecto-de-fin-de-curso-de-la-escac-viajara-al-festival-de-san-sebastian.html"
+                },
+                {
+                    "linkTitle": "LA VANGUARDIA. 'El estudiante' y 'Puzzled Love': juventud en marcha",
+                    "linkUrl": "https://www.lavanguardia.com/cultura/20120503/54288803910/estudiante-puzzled-love-juventud-en-marcha.html"
+                },
+                {
+                    "linkTitle": "El PERIÓDICO. La cantera de la ESCAC brilla con su trabajo de fin de curso",
+                    "linkUrl": "https://www.elperiodico.com/es/ocio-y-cultura/20110921/cantera-escac-brilla-trabajo-curso-1156427"
+                }
+            ],
             "pressKitUrl": "",
             "vimeoID": 66295432,
             "aspectRatio": "ratio-21-9",
