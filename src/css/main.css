@@ -126,6 +126,9 @@ body {
   z-index: 99;
   pointer-events: none; }
 
+.main-wrap {
+  padding-bottom: 20rem; }
+
 .freeze {
   height: 100%;
   overflow-y: hidden;

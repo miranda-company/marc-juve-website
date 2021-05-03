@@ -36,6 +36,10 @@ body {
   pointer-events: none;
 }
 
+.main-wrap {
+  padding-bottom: 20rem;
+}
+
 // "freeze" class is used to freeze the main-content 's position when project-view opens up.
 .freeze {
   height: 100%;

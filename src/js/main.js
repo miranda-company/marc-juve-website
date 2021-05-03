@@ -716,10 +716,10 @@ var DynamicData = {
 
     get: function () {
         // Dynamic data on local machine
-        let requestURL = "http://localhost:3000/js/dynamic-data.json";
+        // let requestURL = "http://localhost:3000/js/dynamic-data.json";
 
         //Dynamic data live server
-        // let requestURL = "https://www.labaula.net/terrenodepruebas/crisantemo/js/dynamic-data.json";
+        let requestURL = "http://www.marcjuve.com/js/dynamic-data.json";
 
         let request = new XMLHttpRequest();
         request.open("GET", requestURL);
