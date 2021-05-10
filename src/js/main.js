@@ -8,7 +8,9 @@ var App = {
 
     init: function () {
         this.cons("App initialized, console is active");
+        $('meta[name=description]').attr('content', DynamicData.data.siteDescription);
         Home.init();
+
     },
 
     cons: function (msg) {
@@ -31,6 +33,7 @@ var Home = {
     isFrozen: false,
     archiveVisible: true,
     heroVideo: null,
+    aboutText: null,
 
     init: function () {
         App.cons("Home initialized");
@@ -41,6 +44,15 @@ var Home = {
         gsap.to("#page-overlay-1", { duration: App.transitionSpeed, autoAlpha: 0 });
         gsap.to("#page-overlay-2", { duration: App.transitionSpeed, opacity: 0 });
         gsap.to("#end-text", { duration: App.transitionSpeed, opacity: 0, y: 100 });
+
+        // Replace about text
+        this.aboutText = $(".about-text");
+        if (DynamicData.data.about) {
+            Home.aboutText.text(DynamicData.data.about);
+        } else {
+            Home.aboutText.addClass("display-none");
+        }
+
     },
 
     freeze: function () {
@@ -480,10 +492,11 @@ var Project = {
             for (var i = 0; i < Project.data[0].festivals.length; i++) {
                 App.cons("Building festival list");
                 let ul = document.createElement("ul");
+                ul.className = "festival";
                 Project.festivals.append(ul);
 
                 let li = document.createElement("li");
-                li.className = "festival";
+                // li.className = "festival";
                 li.innerHTML = Project.data[0].festivals[i];
                 ul.append(li);
             }
@@ -516,10 +529,11 @@ var Project = {
             for (var i = 0; i < Project.data[0].press.length; i++) {
                 App.cons("Building press list");
                 let ul = document.createElement("ul");
+                ul.className = "press-link";
                 Project.press.append(ul);
 
                 let li = document.createElement("li");
-                li.className = "press-link";
+                // li.className = "press-link";
                 ul.append(li);
 
                 let a = document.createElement("a");
@@ -613,6 +627,7 @@ var Project = {
         Project.relatedWork = [];
         $(".related-work-card").remove();
         $(".festival").remove();
+        $(".press-link").remove();
         Project.data = null;
         Project.endSection = null;
         Project.endSectionPos = null;
@@ -711,7 +726,23 @@ var DynamicData = {
     images: [],
 
     init: function () {
-        this.get();
+        // this.get();
+        this.fetch();
+    },
+
+    fetch: function () {
+        App.cons("Fetching json file");
+        fetch("./js/dynamic-data.json")
+            .then(function (resp) {
+                return resp.json();
+            })
+            .then(function (data) {
+                App.cons("Dynamic data was loaded correctly");
+                DynamicData.data = data;
+                DynamicData.getImages();
+                DynamicData.preloadImages(DynamicData.images);
+                App.init();
+            });
     },
 
     get: function () {
@@ -719,7 +750,7 @@ var DynamicData = {
         // let requestURL = "http://localhost:3000/js/dynamic-data.json";
 
         //Dynamic data live server
-        let requestURL = "http://www.marcjuve.com/js/dynamic-data.json";
+        // let requestURL = "http://marcjuve.com/js/dynamic-data.json";
 
         let request = new XMLHttpRequest();
         request.open("GET", requestURL);
