@@ -34,6 +34,7 @@ var Home = {
     archiveVisible: true,
     heroVideo: null,
     aboutText: null,
+    contactText: null,
 
     init: function () {
         App.cons("Home initialized");
@@ -45,6 +46,7 @@ var Home = {
         gsap.to("#page-overlay-2", { duration: App.transitionSpeed, opacity: 0 });
         gsap.to("#end-text", { duration: App.transitionSpeed, opacity: 0, y: 100 });
 
+
         // Replace about text
         this.aboutText = $(".about-text");
         if (DynamicData.data.about) {
@@ -52,6 +54,19 @@ var Home = {
         } else {
             Home.aboutText.addClass("display-none");
         }
+
+        // Replace contact text
+        this.contactText = $(".contact-text");
+        if (DynamicData.data.contact) {
+
+            let auxString = String(DynamicData.data.contact);
+            let aux = auxString.replace(/(?:\r\n|\r|\n)/g, "<br>");
+
+            Home.contactText.html(aux);
+        } else {
+            Home.contactText.addClass("display-none");
+        }
+
 
     },
 
@@ -517,11 +532,12 @@ var Project = {
 
         // Replace press kit info
         if (Project.data[0].pressKitUrl) {
-            Project.pressKitAnchorTag.attr("src", Project.data[0].pressKitUrl);
+            Project.pressKitAnchorTag.attr("href", Project.data[0].pressKitUrl);
+            Project.pressKitAnchorTag.attr("target", "_blank");
             Project.pressKitSection.removeClass("display-none");
         } else {
             Project.pressKitSection.addClass("display-none");
-            Project.pressKitAnchorTag.attr("src", "");
+            Project.pressKitAnchorTag.attr("href", "");
         }
 
         // Replace press info
